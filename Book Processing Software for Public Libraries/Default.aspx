@@ -10,9 +10,29 @@
     <form id="form1" runat="server">
         <div>
             <h1>Common Tasks</h1>
+                <h2>Check-In</h2>
+                <h2>Check-Out</h2>
+                <h2>Renew User Items</h2>
+                <h2>Bill a User</h2>
             <h1>Users</h1>
+                <h2>Admin Log In</h2>
+                <h2>Admin Log Out</h2>
+                <h2>Show Library User</h2>
+                <h2>Register Library User</h2>
+                <h2>Modify Library User</h2>
+                <h2>Remove Library User</h2>
             <h1>Items</h1>
             <h1>Holds</h1>
+                <h2>Place Hold</h2>
+                <h2>Show User Holds</h2>
+                <h2>Modify User Holds</h2>
+                <h2>Remove User Holds</h2>
+                <h2>Show Item/Title Holds</h2>
+                <h2>Remove Item/Title Holds</h2>
+                <h2>Hold Pull List</h2>
+                <h2>Pull List Processing</h2>
+                <h2>Transit Hold Processing</h2>
+                <h2>Hold Pull List</h2>
             <h1>About</h1>
         </div>
     </form>
