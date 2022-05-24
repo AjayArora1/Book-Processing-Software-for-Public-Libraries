@@ -48,7 +48,7 @@
     z-index: 1;
 }
 
-    /* Links inside the dropdown */
+/* Links inside the dropdown */
 .dropdown-content a {
         float: none;
         color: black;
@@ -58,7 +58,7 @@
         text-align: left;
 }
 
-        /* Add a grey background color to dropdown links on hover */
+/* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
             background-color: #ddd;
 }
@@ -67,3 +67,25 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/*on the Login aspx page*/
+.loginForm {
+    border: 2px solid black;
+    border-radius: 16px;
+    text-align: center;
+    width: 33%;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/*on the Login aspx page*/
+.loginFormContent {
+    display: inline-block;
+    text-align: left;
+    line-height: 1.5;
+}
+

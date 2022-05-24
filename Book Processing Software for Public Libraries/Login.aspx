@@ -4,14 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Book Processing Software for Public Libraries</title>
+    <title>Book Processing Software - Log In</title>
     <link rel="stylesheet" href="StyleSheet.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
             <div class="navbar">
-                <strong><a href="Default.aspx">About</a></strong>
+                <a href="Default.aspx">About</a>
                     
                 <div class="dropdown">
                     <button class="dropbtn">Common Tasks
@@ -56,8 +56,23 @@
                     </div>
                 </div>
 
-                <a href="Login.aspx">Log In</a>
+                <strong><a href="Login.aspx">Log In</a></strong>
             </div>
+
+            <div class="loginForm">
+                <div class="loginFormContent">
+                    <strong>User ID:</strong>
+                    <asp:TextBox runat="server" placeholder="(your library card number)" MaxLength="14" style="border: 2px solid grey; border-radius: 4px;"></asp:TextBox>
+                    <br />
+                    <strong>PIN No:</strong>
+                    <asp:TextBox runat="server" placeholder="(last 7 digits of your phone #)" MaxLength="7" style="border: 2px solid grey; border-radius: 4px;"></asp:TextBox>
+                    <br />
+                    <asp:CheckBox runat="server" Text="Check this if you're an Admin."/>
+                    <br />
+                    <asp:Button runat="server" Text="Log In!" href="#"/>
+                </div>
+            </div>
+
         </div>
     </form>
 </body>
