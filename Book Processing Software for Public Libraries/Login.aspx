@@ -72,7 +72,7 @@
                     <asp:CheckBox runat="server" Text="Check this if you're an Admin."/>
                     <br />
                     <asp:Button runat="server" Text="Log In!" onclick="login_Click"/>
-                    <asp:Label ID="errorLabel" runat="server"></asp:Label>  
+                    <asp:Label ID="errorLabel" runat="server" Text="Incorrect Login Details"></asp:Label>
                 </div>
             </div>
 
