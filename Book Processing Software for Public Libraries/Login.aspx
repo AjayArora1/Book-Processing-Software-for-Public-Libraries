@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
 
 <!DOCTYPE html>
 
@@ -62,14 +62,17 @@
             <div class="loginForm">
                 <div class="loginFormContent">
                     <strong>User ID:</strong>
-                    <asp:TextBox runat="server" placeholder="(your library card number)" MaxLength="14" style="border: 2px solid grey; border-radius: 4px;"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="usernameField" placeholder="(your library card number)" MaxLength="14" style="border: 2px solid grey; border-radius: 4px;"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator" runat="server" ControlToValidate="usernameField" ErrorMessage="Please Enter Your Username" ForeColor="Red"></asp:RequiredFieldValidator>  
                     <br />
                     <strong>PIN No:</strong>
-                    <asp:TextBox runat="server" placeholder="(last 7 digits of your phone #)" MaxLength="7" style="border: 2px solid grey; border-radius: 4px;"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="passwordField" placeholder="(last 7 digits of your phone #)" MaxLength="7" style="border: 2px solid grey; border-radius: 4px;"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="passwordField" ErrorMessage="Please Enter Your Password" ForeColor="Red"></asp:RequiredFieldValidator>  
                     <br />
                     <asp:CheckBox runat="server" Text="Check this if you're an Admin."/>
                     <br />
-                    <asp:Button runat="server" Text="Log In!" href="#"/>
+                    <asp:Button runat="server" Text="Log In!" onclick="login_Click"/>
+                    <asp:Label ID="errorLabel" runat="server"></asp:Label>  
                 </div>
             </div>
 
