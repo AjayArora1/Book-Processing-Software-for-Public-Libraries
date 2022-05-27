@@ -22,6 +22,7 @@ public partial class Login : System.Web.UI.Page
             SqlCommand sqlCmd = new SqlCommand(Query, sqlcon);
             sqlCmd.Parameters.AddWithValue("@userID", usernameField.Text.Trim());
             sqlCmd.Parameters.AddWithValue("@userPIN", passwordField.Text.Trim());
+            //sqlCmd.Parameters.AddWithValue("@Username", SqlDbType.VarChar);
             int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
             if (count == 1)
             {
@@ -33,6 +34,7 @@ public partial class Login : System.Web.UI.Page
             {
                 errorLabel.Visible = true;
             }
+
         }
         
 

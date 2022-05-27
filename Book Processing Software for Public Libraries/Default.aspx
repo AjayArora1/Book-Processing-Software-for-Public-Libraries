@@ -57,8 +57,8 @@
                 </div>
 
                 <a href="Login.aspx">Log In</a>
-
             </div>
+            <asp:Label runat="server" ID="welcomeText">Welcome! You are not logged in.</asp:Label>
         </div>
     </form>
 </body>

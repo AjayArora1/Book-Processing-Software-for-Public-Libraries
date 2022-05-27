@@ -9,6 +9,12 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["userID"]!=null)
+        {
+            welcomeText.Text = "Welcome, you are logged in as " + Session["userID"];
+        } else
+        {
+            welcomeText.Text = "Welcome! you are not logged in.";
+        }
     }
 }
