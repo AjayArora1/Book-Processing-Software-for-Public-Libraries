@@ -18,23 +18,20 @@ public partial class Login : System.Web.UI.Page
         using (SqlConnection sqlcon = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True;"))
         {
             sqlcon.Open();
-            string Query = "SELECT COUNT(1) FROM dbo.Users WHERE userID=@userID AND userPIN=@userPIN";
+            string Query = "SELECT * FROM dbo.Users WHERE userID=@userID AND userPIN=@userPIN";
             SqlCommand sqlCmd = new SqlCommand(Query, sqlcon);
             sqlCmd.Parameters.AddWithValue("@userID", usernameField.Text.Trim());
             sqlCmd.Parameters.AddWithValue("@userPIN", passwordField.Text.Trim());
-            //sqlCmd.Parameters.AddWithValue("@Username", SqlDbType.VarChar);
-            int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
-            if (count == 1)
-            {
-                Session["userID"] = usernameField.Text.Trim();
-                errorLabel.Visible = false;
-                Response.Redirect("default.aspx");
+            using(SqlDataReader x = sqlCmd.ExecuteReader()) {
+                while (x.Read()) 
+                {
+                    Session["userID"] = usernameField.Text.Trim();
+                    Session["Username"] = x["Username"].ToString();
+                    Session["isAdmin"] = x["isAdmin"].ToString(); 
+                    errorLabel.Visible = false;
+                    Response.Redirect("default.aspx");
+                }
             }
-            else
-            {
-                errorLabel.Visible = true;
-            }
-
         }
         
 
