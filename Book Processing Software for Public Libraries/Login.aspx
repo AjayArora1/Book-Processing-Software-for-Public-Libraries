@@ -13,8 +13,8 @@
             <div class="navbar">
                 <a href="Default.aspx">About</a>
                     
-                <div class="dropdown">
-                    <button class="dropbtn">Common Tasks
+                <div class="dropdown"> 
+                    <button class="dropbtn" id="commonTasks" runat="server">Common Tasks
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="dropdown">
-                    <button class="dropbtn">Users
+                    <button class="dropbtn" id="users" runat="server">Users
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
@@ -37,13 +37,13 @@
                     </div>
                 </div>
 
-                <a href="#about">Items</a>
+                <a href="#about" id="items" runat="server">Items</a>
 
                 <div class="dropdown">
-                    <button class="dropbtn">Holds
+                    <button class="dropbtn" id="holdsDropdown" runat="server">Holds
                         <i class="fa fa-caret-down"></i>
                     </button>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" id="holds" runat="server">
                         <a href="#">Place Hold</a>
                         <a href="#">Show User Holds</a>
                         <a href="#">Modify User Holds</a>
@@ -55,8 +55,8 @@
                         <a href="#">Transit Holds Processing</a>
                     </div>
                 </div>
-
-                <strong><a href="Login.aspx">Log In</a></strong>
+                <strong><asp:LinkButton runat="server" ID="login" OnClick="Login_Click">Log In</asp:LinkButton></strong>
+                <strong><asp:LinkButton runat="server" ID="logout" Visible="false" OnClick="Logout_Click">Log Out</asp:LinkButton></strong>
             </div>
 
             <div class="loginForm">
@@ -66,13 +66,13 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator" runat="server" ControlToValidate="usernameField" ErrorMessage="Please Enter Your Username" ForeColor="Red"></asp:RequiredFieldValidator>  
                     <br />
                     <strong>PIN No:</strong>
-                    <asp:TextBox runat="server" ID="passwordField" placeholder="(last 7 digits of your phone #)" MaxLength="7" style="border: 2px solid grey; border-radius: 4px;"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="passwordField" placeholder="(last 7 digits of your phone #)" MaxLength="7" style="border: 2px solid grey; border-radius: 4px;" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="passwordField" ErrorMessage="Please Enter Your Password" ForeColor="Red"></asp:RequiredFieldValidator>  
                     <br />
                     <asp:CheckBox runat="server" Text="Check this if you're an Admin."/>
                     <br />
-                    <asp:Button runat="server" Text="Log In!" onclick="login_Click"/>
-                    <asp:Label ID="errorLabel" runat="server" Text="Incorrect Login Details"></asp:Label>
+                    <asp:Button runat="server" Text="Log In!" onclick="login_Button_Click"/>
+                    <asp:Label ID="errorLabel" runat="server" Text="Incorrect Login Details" ForeColor="Red"></asp:Label>
                 </div>
             </div>
 
