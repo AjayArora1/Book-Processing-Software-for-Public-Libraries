@@ -13,8 +13,8 @@
             <div class="navbar">
                 <strong><a href="Default.aspx">About</a></strong>
                     
-                <div class="dropdown">
-                    <button class="dropbtn">Common Tasks
+                <div class="dropdown"> 
+                    <button class="dropbtn" id="commonTasks" runat="server">Common Tasks
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="dropdown">
-                    <button class="dropbtn">Users
+                    <button class="dropbtn" id="users" runat="server">Users
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
@@ -37,13 +37,13 @@
                     </div>
                 </div>
 
-                <a href="#about">Items</a>
+                <a href="#about" id="items" runat="server">Items</a>
 
                 <div class="dropdown">
-                    <button class="dropbtn">Holds
+                    <button class="dropbtn" id="holdsDropdown" runat="server">Holds
                         <i class="fa fa-caret-down"></i>
                     </button>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" id="holds" runat="server">
                         <a href="#">Place Hold</a>
                         <a href="#">Show User Holds</a>
                         <a href="#">Modify User Holds</a>
@@ -55,10 +55,14 @@
                         <a href="#">Transit Holds Processing</a>
                     </div>
                 </div>
-
-                <a href="Login.aspx">Log In</a>
+                <asp:LinkButton runat="server" ID="login" OnClick="Login_Click">Log In</asp:LinkButton>
+                <asp:LinkButton runat="server" ID="logout" Visible="false" OnClick="Logout_Click">Log Out</asp:LinkButton>
             </div>
             <asp:Label runat="server" ID="welcomeText">Welcome! You are not logged in.</asp:Label>
+            <br />
+            <asp:Label runat="server" ID="libCardText">Your library card number is: </asp:Label>
+            <br />
+            <asp:Label runat="server" ID="adminText">You are not an admin.</asp:Label>
         </div>
     </form>
 </body>
