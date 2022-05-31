@@ -87,12 +87,34 @@
             <!--"CheckIn" Page Content-->
             <div class="checkin_content" runat="server" id="checkin_content" Visible="false">
                 <h1><asp:Label runat="server">Check-In</asp:Label></h1>
+                <h2>Required Fields:</h2>
+                <p>*Item ID: <asp:TextBox runat="server" ID="txt_checkin_ID" MaxLength="14"></asp:TextBox></p>
+                <p>*Item Title: <asp:TextBox runat="server" ID="txt_checkin_title"></asp:TextBox></p>
+                <p>*Item Author: <asp:TextBox runat="server" ID="txt_checkin_author"></asp:TextBox></p>
+                <p>*Dewey Call Number: <asp:TextBox runat="server" ID="txt_checkin_dewey_call_no"></asp:TextBox></p>
+                <p>*ISBN10: <asp:TextBox runat="server" ID="txt_checkin_isbn10"></asp:TextBox></p>
+                <p>*ISBN13: <asp:TextBox runat="server" ID="txt_checkin_isbn13"></asp:TextBox></p>
+
+                <h2>Optional Fields:</h2>
+                <p>Publication Info: <asp:TextBox runat="server" ID="txt_checkin_publication_info"></asp:TextBox></p>
+                <p>Physical Description: <asp:TextBox runat="server" ID="txt_checkin_physical_description"></asp:TextBox></p>
+                <p>Action Note: <asp:TextBox runat="server" ID="txt_checkin_action_note"></asp:TextBox></p>
+                <p>Subject Term: <asp:TextBox runat="server" ID="txt_checkin_subject_term"></asp:TextBox></p>
+                <p>Leader: <asp:TextBox runat="server" ID="txt_checkin_leader"></asp:TextBox></p>
+                <p>Control Number: <asp:TextBox runat="server" ID="txt_checkin_control_number"></asp:TextBox></p>
+                <p>Fixed Field Data: <asp:TextBox runat="server" ID="txt_checkin_fixed_field_data"></asp:TextBox></p>
+                <p>Natl Bibliography Info: <asp:TextBox runat="server" ID="txt_checkin_natl_bibliography_info"></asp:TextBox></p>
+                <p>Cataloging Source: <asp:TextBox runat="server" ID="txt_checkin_cataloging_source"></asp:TextBox></p>
+                <p>LLC Call Number: <asp:TextBox runat="server" ID="txt_checkin_llc_call_number"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_checkin_item" Text="Check In"/>
             </div>
             <!--End of "CheckIn" Page Content-->
 
             <!--"CheckOut" Page Content-->
             <div class="checkout_content" runat="server" id="checkout_content" Visible="false">
                 <h1><asp:Label runat="server">Check-Out</asp:Label></h1>
+                <p>*Item ID: <asp:TextBox runat="server" ID="txt_checkout_ID" MaxLength="14"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_checkout_item" Text="Check Out"/>
             </div>
             <!--End of "CheckOut" Page Content-->
 
