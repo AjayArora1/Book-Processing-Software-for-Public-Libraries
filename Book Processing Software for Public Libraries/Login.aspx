@@ -61,18 +61,24 @@
 
             <div class="loginForm">
                 <div class="loginFormContent">
-                    <strong>User ID:</strong>
+                    <h1>Login</h1>
+                    <strong>User ID: <strong style="color:red;">*</strong></strong>
                     <asp:TextBox runat="server" ID="usernameField" placeholder="(your library card number)" MaxLength="14" style="border: 2px solid grey; border-radius: 4px;"></asp:TextBox>
+                    <strong style="color: red;">(Required)</strong>
+                    <br />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator" runat="server" ControlToValidate="usernameField" ErrorMessage="Please Enter Your Username" ForeColor="Red"></asp:RequiredFieldValidator>  
                     <br />
-                    <strong>PIN No:</strong>
+                    <strong>PIN No: <strong style="color:red;">*</strong></strong>
                     <asp:TextBox runat="server" ID="passwordField" placeholder="(last 7 digits of your phone #)" MaxLength="7" style="border: 2px solid grey; border-radius: 4px;" TextMode="Password"></asp:TextBox>
+                    <strong style="color: red;">(Required)</strong>
+                    <br />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="passwordField" ErrorMessage="Please Enter Your Password" ForeColor="Red"></asp:RequiredFieldValidator>  
                     <br />
-                    <asp:CheckBox runat="server" Text="Check this if you're an Admin."/>
+                    <asp:CheckBox runat="server" Text="Stay signed in?"/>
                     <br />
-                    <asp:Button runat="server" Text="Log In!" onclick="login_Button_Click"/>
-                    <asp:Label ID="errorLabel" runat="server" Text="Incorrect Login Details" ForeColor="Red"></asp:Label>
+                    <br />
+                    <asp:Button runat="server" class="buttons" Text="Log In!" onclick="login_Button_Click" />
+                    <asp:Label ID="errorLabel" runat="server" Text="Error: Incorrect Login Details" ForeColor="Red"></asp:Label>
                 </div>
             </div>
 
