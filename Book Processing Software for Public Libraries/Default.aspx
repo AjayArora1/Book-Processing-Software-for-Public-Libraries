@@ -121,18 +121,26 @@
             <!--"RenewUserItems" Page Content-->
             <div class="renewuseritems_content" runat="server" id="renewuseritems_content" Visible="false">
                 <h1><asp:Label runat="server">Renew User Items</asp:Label></h1>
+                <p>*Item ID: <asp:TextBox runat="server" ID="txt_renew_user_items_ID" MaxLength="14"></asp:TextBox></p>
+                <p>*New Due Date: <asp:TextBox runat="server" ID="txt_renew_user_items_new_due_date" MaxLength="10"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_renew_user_item" Text="Renew Item"/>
             </div>
             <!--End of "RenewUserItems" Page Content-->
 
             <!--"BillUser" Page Content-->
             <div class="billuser_content" runat="server" id="billuser_content" Visible="false">
                 <h1><asp:Label runat="server">Bill a User</asp:Label></h1>
+                <p>*User to bill's ID: <asp:TextBox runat="server" ID="txt_bill_user_ID" MaxLength="14"></asp:TextBox></p>
+                <p>*Amount to bill user: <asp:TextBox runat="server" ID="txt_bill_user_amount" MaxLength="10"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_bill_user" Text="Bill User"/>
             </div>
             <!--End of "BillUser" Page Content-->
 
             <!--"ShowUser" Page Content-->
             <div class="showuser_content" runat="server" id="showuser_content" Visible="false">
                 <h1><asp:Label runat="server">Show User</asp:Label></h1>
+                <p>*User's ID: <asp:TextBox runat="server" ID="txt_show_user_ID" MaxLength="14"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_show_user" Text="Show User Info"/>
             </div>
             <!--End of "ShowUser" Page Content-->
 
@@ -145,72 +153,98 @@
             <!--"ModifyUser" Page Content-->
             <div class="modifyuser_content" runat="server" id="modifyuser_content" Visible="false">
                 <h1><asp:Label runat="server">Modify User</asp:Label></h1>
+                <p>*User's ID: <asp:TextBox runat="server" ID="txt_modify_user_ID" MaxLength="14"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_modify_user" Text="Modify User Account"/>
             </div>
             <!--End of "ModifyUser" Page Content-->
 
             <!--"RemoveUser" Page Content-->
             <div class="removeuser_content" runat="server" id="removeuser_content" Visible="false">
                 <h1><asp:Label runat="server">Remove User</asp:Label></h1>
+                <p>*User's ID: <asp:TextBox runat="server" ID="txt_remove_user_ID" MaxLength="14"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_remove_user" Text="Remove User Account"/>
             </div>
             <!--End of "RemoveUser" Page Content-->
 
             <!--"Items" Page Content-->
             <div class="items_content" runat="server" id="items_content" Visible="false">
                 <h1><asp:Label runat="server">Items</asp:Label></h1>
+                <p>Item Search: <asp:TextBox runat="server" ID="txt_item_search"></asp:TextBox></p>
+                <!--TODO: Add list of books, and use the search bar above to be able to search for items that match the search query. like in a previous project.-->
             </div>
             <!--End of "Items" Page Content-->
 
             <!--"Place Hold" Page Content-->
             <div class="placehold_content" runat="server" id="placehold_content" Visible="false">
                 <h1><asp:Label runat="server">Place a Hold</asp:Label></h1>
+                <p>*User's ID: <asp:TextBox runat="server" ID="txt_place_hold_user_ID" MaxLength="14"></asp:TextBox></p>
+                <p>*Item's ID: <asp:TextBox runat="server" ID="txt_place_hold_item_ID" MaxLength="14"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_place_hold" Text="Place Hold"/>
+                
             </div>
             <!--End of "Place Hold" Page Content-->
 
             <!--"Show User Hold" Page Content-->
             <div class="showuserholds_content" runat="server" id="showuserholds_content" Visible="false">
                 <h1><asp:Label runat="server">Show User Holds</asp:Label></h1>
+                <p>*User's ID: <asp:TextBox runat="server" ID="txt_show_user_holds_ID" MaxLength="14"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_show_user_holds" Text="Show User Holds"/>
             </div>
             <!--End of "Show User Hold" Page Content-->
 
             <!--"Modify User Hold" Page Content-->
             <div class="modifyuserholds_content" runat="server" id="modifyuserholds_content" Visible="false">
                 <h1><asp:Label runat="server">Modify User Holds</asp:Label></h1>
+                <p>*User's ID: <asp:TextBox runat="server" ID="txt_modify_user_holds_ID" MaxLength="14"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_modify_user_holds" Text="Modify User Holds"/>
             </div>
             <!--End of "Modify User Hold" Page Content-->
 
             <!--"Remove User Hold" Page Content-->
             <div class="removeuserholds_content" runat="server" id="removeuserholds_content" Visible="false">
                 <h1><asp:Label runat="server">Remove User Holds</asp:Label></h1>
+                <p>*User's ID: <asp:TextBox runat="server" ID="txt_remove_user_holds_user_ID" MaxLength="14"></asp:TextBox></p>
+                <p>*Hold's ID: <asp:TextBox runat="server" ID="txt_remove_user_holds_item_ID" MaxLength="14"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_remove_user_hold" Text="Remove User Holds"/>
             </div>
             <!--End of "Remove User Hold" Page Content-->
 
             <!--"Show Title Hold" Page Content-->
             <div class="showtitleholds_content" runat="server" id="showtitleholds_content" Visible="false">
                 <h1><asp:Label runat="server">Show Title Holds</asp:Label></h1>
+                <p>*Item's ID: <asp:TextBox runat="server" ID="txt_show_title_holds_ID" MaxLength="14"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_show_title_holds" Text="View Title Holds"/>
             </div>
             <!--End of "Show Title Hold" Page Content-->
 
             <!--"Remove Title Hold" Page Content-->
             <div class="removetitleholds_content" runat="server" id="removetitleholds_content" Visible="false">
                 <h1><asp:Label runat="server">Remove Title Holds</asp:Label></h1>
+                <p>*Item's ID: <asp:TextBox runat="server" ID="txt_remove_title_holds_ID" MaxLength="14"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_remove_title_holds" Text="Remove Title Holds"/>
             </div>
             <!--End of "Remove Title Hold" Page Content-->
 
             <!--"Hold Pull List" Page Content-->
             <div class="holdpulllist_content" runat="server" id="holdpulllist_content" Visible="false">
                 <h1><asp:Label runat="server">Hold Pull List</asp:Label></h1>
+                <asp:Button runat="server" ID="btn_hold_pull_list" Text="View Hold Pull List"/>
             </div>
             <!--End of "Hold Pull List" Page Content-->
 
             <!--"Pull List Processing" Page Content-->
             <div class="pulllistprocessing_content" runat="server" id="pulllistprocessing_content" Visible="false">
                 <h1><asp:Label runat="server">Pull List Processing</asp:Label></h1>
+                <p>*Item's ID: <asp:TextBox runat="server" ID="txt_pull_list_processing_ID" MaxLength="14"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_pull_list_processing" Text="Process Item"/>
             </div>
             <!--End of "Pull List Processing" Page Content-->
 
             <!--"Transit Hold Processing" Page Content-->
             <div class="transitholdprocessing_content" runat="server" id="transitholdprocessing_content" Visible="false">
                 <h1><asp:Label runat="server">Transit Holds Processing</asp:Label></h1>
+                <p>*Item's ID: <asp:TextBox runat="server" ID="txt_transit_hold_processing_ID" MaxLength="14"></asp:TextBox></p>
+                <asp:Button runat="server" ID="btn_transit_hold_processing" Text="Process Item"/>
             </div>
             <!--End of "Transit Hold Processing" Page Content-->
         </div>
