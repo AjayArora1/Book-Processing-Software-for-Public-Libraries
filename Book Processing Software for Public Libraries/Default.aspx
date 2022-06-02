@@ -88,12 +88,12 @@
             <div class="checkin_content" runat="server" id="checkin_content" Visible="false">
                 <h1><asp:Label runat="server">Check-In</asp:Label></h1>
                 <h2>Required Fields:</h2>
-                <p>*Item ID: <asp:TextBox runat="server" ID="txt_checkin_ID" MaxLength="14"></asp:TextBox></p>
-                <p>*Item Title: <asp:TextBox runat="server" ID="txt_checkin_title"></asp:TextBox></p>
-                <p>*Item Author: <asp:TextBox runat="server" ID="txt_checkin_author"></asp:TextBox></p>
-                <p>*Dewey Call Number: <asp:TextBox runat="server" ID="txt_checkin_dewey_call_no"></asp:TextBox></p>
-                <p>*ISBN10: <asp:TextBox runat="server" ID="txt_checkin_isbn10"></asp:TextBox></p>
-                <p>*ISBN13: <asp:TextBox runat="server" ID="txt_checkin_isbn13"></asp:TextBox></p>
+                <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Item Title: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_title"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Item Author: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_author"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Dewey Call Number: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_dewey_call_no"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>ISBN10: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_isbn10"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>ISBN13: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_isbn13"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
 
                 <h2>Optional Fields:</h2>
                 <p>Publication Info: <asp:TextBox runat="server" ID="txt_checkin_publication_info"></asp:TextBox></p>
@@ -113,7 +113,7 @@
             <!--"CheckOut" Page Content-->
             <div class="checkout_content" runat="server" id="checkout_content" Visible="false">
                 <h1><asp:Label runat="server">Check-Out</asp:Label></h1>
-                <p>*Item ID: <asp:TextBox runat="server" ID="txt_checkout_ID" MaxLength="14"></asp:TextBox></p>
+                <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkout_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_checkout_item" Text="Check Out"/>
             </div>
             <!--End of "CheckOut" Page Content-->
@@ -121,8 +121,8 @@
             <!--"RenewUserItems" Page Content-->
             <div class="renewuseritems_content" runat="server" id="renewuseritems_content" Visible="false">
                 <h1><asp:Label runat="server">Renew User Items</asp:Label></h1>
-                <p>*Item ID: <asp:TextBox runat="server" ID="txt_renew_user_items_ID" MaxLength="14"></asp:TextBox></p>
-                <p>*New Due Date: <asp:TextBox runat="server" ID="txt_renew_user_items_new_due_date" MaxLength="10"></asp:TextBox></p>
+                <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_renew_user_items_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>New Due Date: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_renew_user_items_new_due_date" MaxLength="10"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_renew_user_item" Text="Renew Item"/>
             </div>
             <!--End of "RenewUserItems" Page Content-->
@@ -130,8 +130,8 @@
             <!--"BillUser" Page Content-->
             <div class="billuser_content" runat="server" id="billuser_content" Visible="false">
                 <h1><asp:Label runat="server">Bill a User</asp:Label></h1>
-                <p>*User to bill's ID: <asp:TextBox runat="server" ID="txt_bill_user_ID" MaxLength="14"></asp:TextBox></p>
-                <p>*Amount to bill user: <asp:TextBox runat="server" ID="txt_bill_user_amount" MaxLength="10"></asp:TextBox></p>
+                <p>User to bill's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_bill_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Amount to bill user: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_bill_user_amount" MaxLength="10"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_bill_user" Text="Bill User"/>
             </div>
             <!--End of "BillUser" Page Content-->
@@ -139,7 +139,7 @@
             <!--"ShowUser" Page Content-->
             <div class="showuser_content" runat="server" id="showuser_content" Visible="false">
                 <h1><asp:Label runat="server">Show User</asp:Label></h1>
-                <p>*User's ID: <asp:TextBox runat="server" ID="txt_show_user_ID" MaxLength="14"></asp:TextBox></p>
+                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_show_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_show_user" Text="Show User Info"/>
             </div>
             <!--End of "ShowUser" Page Content-->
@@ -153,7 +153,7 @@
             <!--"ModifyUser" Page Content-->
             <div class="modifyuser_content" runat="server" id="modifyuser_content" Visible="false">
                 <h1><asp:Label runat="server">Modify User</asp:Label></h1>
-                <p>*User's ID: <asp:TextBox runat="server" ID="txt_modify_user_ID" MaxLength="14"></asp:TextBox></p>
+                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_modify_user" Text="Modify User Account"/>
             </div>
             <!--End of "ModifyUser" Page Content-->
@@ -161,7 +161,7 @@
             <!--"RemoveUser" Page Content-->
             <div class="removeuser_content" runat="server" id="removeuser_content" Visible="false">
                 <h1><asp:Label runat="server">Remove User</asp:Label></h1>
-                <p>*User's ID: <asp:TextBox runat="server" ID="txt_remove_user_ID" MaxLength="14"></asp:TextBox></p>
+                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_remove_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_remove_user" Text="Remove User Account"/>
             </div>
             <!--End of "RemoveUser" Page Content-->
@@ -177,8 +177,8 @@
             <!--"Place Hold" Page Content-->
             <div class="placehold_content" runat="server" id="placehold_content" Visible="false">
                 <h1><asp:Label runat="server">Place a Hold</asp:Label></h1>
-                <p>*User's ID: <asp:TextBox runat="server" ID="txt_place_hold_user_ID" MaxLength="14"></asp:TextBox></p>
-                <p>*Item's ID: <asp:TextBox runat="server" ID="txt_place_hold_item_ID" MaxLength="14"></asp:TextBox></p>
+                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_place_hold_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_place_hold_item_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_place_hold" Text="Place Hold"/>
                 
             </div>
@@ -187,7 +187,7 @@
             <!--"Show User Hold" Page Content-->
             <div class="showuserholds_content" runat="server" id="showuserholds_content" Visible="false">
                 <h1><asp:Label runat="server">Show User Holds</asp:Label></h1>
-                <p>*User's ID: <asp:TextBox runat="server" ID="txt_show_user_holds_ID" MaxLength="14"></asp:TextBox></p>
+                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_show_user_holds_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_show_user_holds" Text="Show User Holds"/>
             </div>
             <!--End of "Show User Hold" Page Content-->
@@ -195,7 +195,7 @@
             <!--"Modify User Hold" Page Content-->
             <div class="modifyuserholds_content" runat="server" id="modifyuserholds_content" Visible="false">
                 <h1><asp:Label runat="server">Modify User Holds</asp:Label></h1>
-                <p>*User's ID: <asp:TextBox runat="server" ID="txt_modify_user_holds_ID" MaxLength="14"></asp:TextBox></p>
+                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_holds_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_modify_user_holds" Text="Modify User Holds"/>
             </div>
             <!--End of "Modify User Hold" Page Content-->
@@ -203,8 +203,8 @@
             <!--"Remove User Hold" Page Content-->
             <div class="removeuserholds_content" runat="server" id="removeuserholds_content" Visible="false">
                 <h1><asp:Label runat="server">Remove User Holds</asp:Label></h1>
-                <p>*User's ID: <asp:TextBox runat="server" ID="txt_remove_user_holds_user_ID" MaxLength="14"></asp:TextBox></p>
-                <p>*Hold's ID: <asp:TextBox runat="server" ID="txt_remove_user_holds_item_ID" MaxLength="14"></asp:TextBox></p>
+                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_remove_user_holds_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Hold's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_remove_user_holds_item_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_remove_user_hold" Text="Remove User Holds"/>
             </div>
             <!--End of "Remove User Hold" Page Content-->
@@ -212,7 +212,7 @@
             <!--"Show Title Hold" Page Content-->
             <div class="showtitleholds_content" runat="server" id="showtitleholds_content" Visible="false">
                 <h1><asp:Label runat="server">Show Title Holds</asp:Label></h1>
-                <p>*Item's ID: <asp:TextBox runat="server" ID="txt_show_title_holds_ID" MaxLength="14"></asp:TextBox></p>
+                <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_show_title_holds_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_show_title_holds" Text="View Title Holds"/>
             </div>
             <!--End of "Show Title Hold" Page Content-->
@@ -220,7 +220,7 @@
             <!--"Remove Title Hold" Page Content-->
             <div class="removetitleholds_content" runat="server" id="removetitleholds_content" Visible="false">
                 <h1><asp:Label runat="server">Remove Title Holds</asp:Label></h1>
-                <p>*Item's ID: <asp:TextBox runat="server" ID="txt_remove_title_holds_ID" MaxLength="14"></asp:TextBox></p>
+                <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_remove_title_holds_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_remove_title_holds" Text="Remove Title Holds"/>
             </div>
             <!--End of "Remove Title Hold" Page Content-->
@@ -235,7 +235,7 @@
             <!--"Pull List Processing" Page Content-->
             <div class="pulllistprocessing_content" runat="server" id="pulllistprocessing_content" Visible="false">
                 <h1><asp:Label runat="server">Pull List Processing</asp:Label></h1>
-                <p>*Item's ID: <asp:TextBox runat="server" ID="txt_pull_list_processing_ID" MaxLength="14"></asp:TextBox></p>
+                <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_pull_list_processing_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_pull_list_processing" Text="Process Item"/>
             </div>
             <!--End of "Pull List Processing" Page Content-->
@@ -243,7 +243,7 @@
             <!--"Transit Hold Processing" Page Content-->
             <div class="transitholdprocessing_content" runat="server" id="transitholdprocessing_content" Visible="false">
                 <h1><asp:Label runat="server">Transit Holds Processing</asp:Label></h1>
-                <p>*Item's ID: <asp:TextBox runat="server" ID="txt_transit_hold_processing_ID" MaxLength="14"></asp:TextBox></p>
+                <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_transit_hold_processing_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_transit_hold_processing" Text="Process Item"/>
             </div>
             <!--End of "Transit Hold Processing" Page Content-->
