@@ -74,7 +74,7 @@
                     <br />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="passwordField" ErrorMessage="Please Enter Your Password" ForeColor="Red"></asp:RequiredFieldValidator>  
                     <br />
-                    <asp:CheckBox runat="server" Text="Stay signed in?"/>
+                    <asp:CheckBox runat="server" Text="Stay signed in?" OnCheckedChanged="btn_staySignedIn_CheckedChanged" ID="btn_staySignedIn"/>
                     <br />
                     <br />
                     <asp:Button runat="server" class="buttons" Text="Log In!" onclick="login_Button_Click" />

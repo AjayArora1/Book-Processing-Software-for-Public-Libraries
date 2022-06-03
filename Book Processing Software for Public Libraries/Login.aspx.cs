@@ -75,4 +75,9 @@ public partial class Login : System.Web.UI.Page
         Response.Redirect("Default.aspx");
         Session.Abandon();
     }
+
+    protected void btn_staySignedIn_CheckedChanged(object sender, EventArgs e)
+    {
+        //TODO: Stay Signed In Functionality
+    }
 }  
