@@ -81,7 +81,9 @@
                     <asp:Label ID="errorLabel" runat="server" Text="Error: Incorrect Login Details" ForeColor="Red"></asp:Label>
                 </div>
             </div>
-
+            <div class="footer">
+                <p>Ajay Arora</p>
+            </div>
         </div>
     </form>
 </body>

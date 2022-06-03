@@ -2,7 +2,9 @@
     font-family: 'Arial Rounded MT';
     background: conic-gradient(from 0deg at 50% 50%, #00829b 0% 25%, #f6cd2e 25% 50%, #b32673 50% 75%, #405d67 75% 100%);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    margin: 0;
+    height: 100%;
 }
 
 /* Navbar container */
@@ -10,6 +12,7 @@
     overflow: hidden;
     background-color: #f4f4f4;
     font-family: Arial;
+    border-radius: 0 0 8px 8px;
 }
 
 /* Links inside the navbar */
@@ -90,6 +93,7 @@
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    background-color: white;
 }
 
 /*on the Login aspx page*/
@@ -114,5 +118,18 @@
     border: 2px solid black;
     cursor: pointer;
     background-color: #f4f4f4;
+}
+
+.footer {
+    overflow: hidden;
+    background-color: #f4f4f4;
+    font-family: Arial;
+    border-radius: 8px 8px 0 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    /* padding: 14px 16px;*/
 }
 
