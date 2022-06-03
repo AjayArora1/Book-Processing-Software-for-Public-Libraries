@@ -1,6 +1,8 @@
 ﻿html, body {
     font-family: 'Arial Rounded MT';
-    background-color: #ffffff;
+    background: conic-gradient(from 0deg at 50% 50%, #00829b 0% 25%, #f6cd2e 25% 50%, #b32673 50% 75%, #405d67 75% 100%);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 /* Navbar container */
