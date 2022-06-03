@@ -86,27 +86,31 @@
 
             <!--"CheckIn" Page Content-->
             <div class="checkin_content" runat="server" id="checkin_content" Visible="false">
-                <h1><asp:Label runat="server">Check-In</asp:Label></h1>
-                <h2>Required Fields:</h2>
-                <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>Item Title: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_title"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>Item Author: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_author"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>Dewey Call Number: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_dewey_call_no"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>ISBN10: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_isbn10"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>ISBN13: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_isbn13"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-
-                <h2>Optional Fields:</h2>
-                <p>Publication Info: <asp:TextBox runat="server" ID="txt_checkin_publication_info"></asp:TextBox></p>
-                <p>Physical Description: <asp:TextBox runat="server" ID="txt_checkin_physical_description"></asp:TextBox></p>
-                <p>Action Note: <asp:TextBox runat="server" ID="txt_checkin_action_note"></asp:TextBox></p>
-                <p>Subject Term: <asp:TextBox runat="server" ID="txt_checkin_subject_term"></asp:TextBox></p>
-                <p>Leader: <asp:TextBox runat="server" ID="txt_checkin_leader"></asp:TextBox></p>
-                <p>Control Number: <asp:TextBox runat="server" ID="txt_checkin_control_number"></asp:TextBox></p>
-                <p>Fixed Field Data: <asp:TextBox runat="server" ID="txt_checkin_fixed_field_data"></asp:TextBox></p>
-                <p>Natl Bibliography Info: <asp:TextBox runat="server" ID="txt_checkin_natl_bibliography_info"></asp:TextBox></p>
-                <p>Cataloging Source: <asp:TextBox runat="server" ID="txt_checkin_cataloging_source"></asp:TextBox></p>
-                <p>LLC Call Number: <asp:TextBox runat="server" ID="txt_checkin_llc_call_number"></asp:TextBox></p>
-                <asp:Button runat="server" class="buttons" ID="btn_checkin_item" Text="Check In"/>
+                <div class="checkin_content_1" style="width:50%; float:left;">
+                    <h1><asp:Label runat="server">Check-In</asp:Label></h1>
+                    <h2>Required Fields:</h2>
+                    <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                    <p>Item Title: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_title"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                    <p>Item Author: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_author"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                    <p>Dewey Call Number: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_dewey_call_no"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                    <p>ISBN10: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_isbn10"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                    <p>ISBN13: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_isbn13"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                    <br /><br /><br />
+                    <asp:Button runat="server" class="buttons" ID="btn_checkin_item" Text="Check In"/>
+                </div>
+                <div class="checkin_content_2" style="width:50%; float:right;">
+                    <h2>Optional Fields:</h2>
+                    <p>Publication Info: <asp:TextBox runat="server" ID="txt_checkin_publication_info"></asp:TextBox></p>
+                    <p>Physical Description: <asp:TextBox runat="server" ID="txt_checkin_physical_description"></asp:TextBox></p>
+                    <p>Action Note: <asp:TextBox runat="server" ID="txt_checkin_action_note"></asp:TextBox></p>
+                    <p>Subject Term: <asp:TextBox runat="server" ID="txt_checkin_subject_term"></asp:TextBox></p>
+                    <p>Leader: <asp:TextBox runat="server" ID="txt_checkin_leader"></asp:TextBox></p>
+                    <p>Control Number: <asp:TextBox runat="server" ID="txt_checkin_control_number"></asp:TextBox></p>
+                    <p>Fixed Field Data: <asp:TextBox runat="server" ID="txt_checkin_fixed_field_data"></asp:TextBox></p>
+                    <p>Natl Bibliography Info: <asp:TextBox runat="server" ID="txt_checkin_natl_bibliography_info"></asp:TextBox></p>
+                    <p>Cataloging Source: <asp:TextBox runat="server" ID="txt_checkin_cataloging_source"></asp:TextBox></p>
+                    <p>LLC Call Number: <asp:TextBox runat="server" ID="txt_checkin_llc_call_number"></asp:TextBox></p>
+                </div>
             </div>
             <!--End of "CheckIn" Page Content-->
 
@@ -147,6 +151,11 @@
             <!--"RegisterUser" Page Content-->
             <div class="registeruser_content" runat="server" id="registeruser_content" Visible="false">
                 <h1><asp:Label runat="server">Register User</asp:Label></h1>
+                <p>Library Card Number: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_register_user_library_card_number" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Library Card PIN: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_register_user_library_card_PIN" MaxLength="7"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Username: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_register_user_username"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Password: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_register_user_password"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <asp:CheckBox runat="server" Text="Is this user going to be an administrator?"/><strong style="color:red;">(Required)</strong>
             </div>
             <!--End of "RegisterUser" Page Content-->
 

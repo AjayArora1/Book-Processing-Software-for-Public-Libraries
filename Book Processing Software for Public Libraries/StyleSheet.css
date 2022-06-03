@@ -120,6 +120,20 @@
     background-color: #f4f4f4;
 }
 
+.checkin_content {
+    border: 2px solid black;
+    border-radius: 16px;
+    text-align: left;
+    width: 80%;
+    padding: 20px;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    background-color: white;
+}
+
 .footer {
     overflow: hidden;
     background-color: #f4f4f4;
