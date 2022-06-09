@@ -8,7 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <!--Navigation Bar-->
+            <%--<!--Navigation Bar-->--%>
             <div class="navbar">
 
                 <!--"About" Button-->
@@ -96,7 +96,7 @@
                     <p>ISBN10: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_isbn10"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                     <p>ISBN13: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_isbn13"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                     <br /><br /><br />
-                    <asp:Button runat="server" class="buttons" ID="btn_checkin_item" Text="Check In"/>
+                    <asp:Button runat="server" class="buttons" ID="checkin_item" OnClick="btn_checkin_item" Text="Check In"/>
                 </div>
                 <div class="checkin_content_2" style="width:50%; float:right;">
                     <h2>Optional Fields:</h2>

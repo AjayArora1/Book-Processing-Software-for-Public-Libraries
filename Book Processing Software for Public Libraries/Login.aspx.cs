@@ -52,16 +52,57 @@ public partial class Login : System.Web.UI.Page
             sqlCmd.Parameters.AddWithValue("@userID", usernameField.Text.Trim());
             sqlCmd.Parameters.AddWithValue("@userPIN", passwordField.Text.Trim());
             //Reads each cell of a row in the user database, so we can access all their user information from the database.
-            using(SqlDataReader x = sqlCmd.ExecuteReader()) {
-                while (x.Read()) 
+            using (SqlDataReader x = sqlCmd.ExecuteReader())
+            {
+                while (x.Read())
                 {
                     Session["userID"] = usernameField.Text.Trim();
+                    Session["userPIN"] = passwordField.Text.Trim();
                     Session["Username"] = x["Username"].ToString();
-                    Session["isAdmin"] = x["isAdmin"].ToString(); 
+                    Session["Password"] = x["Password"].ToString();
+                    Session["isAdmin"] = x["isAdmin"].ToString();
                     errorLabel.Visible = false;
                     Response.Redirect("default.aspx"); //Redirect to the homepage after logging in.
                 }
                 errorLabel.Visible = true;
+            }
+        }
+
+        //Opens a connection to the SQL materials database
+        using (SqlConnection sqlcon2 = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True;"))
+        {
+            sqlcon2.Open();
+            string Query2 = "SELECT * FROM dbo.Materials WHERE Id = @Id";
+            SqlCommand sqlCmd2 = new SqlCommand(Query2, sqlcon2);
+
+            //Reads each cell of a row in the materials database, so we can access all their user information from the database.
+            using (SqlDataReader y = sqlCmd2.ExecuteReader())
+            {
+                while (y.Read())
+                {
+                    Session["Id"] = y["Id"].ToString();
+                    Session["DeweyCallNo"] = y["DeweyCallNo"].ToString();
+                    Session["Title"] = y["Title"].ToString();
+                    Session["PublicationInfo"] = y["PublicationInfo"].ToString();
+                    Session["PhysicalDescription"] = y["PhysicalDescription"].ToString();
+                    Session["GeneralNote"] = y["GeneralNote"].ToString();
+                    Session["BibliographyNote"] = y["BibliographyNote"].ToString();
+                    Session["ActionNote"] = y["ActionNote"].ToString();
+                    Session["SubjectTerm"] = y["SubjectTerm"].ToString();
+                    Session["Authors"] = y["Authors"].ToString();
+                    Session["HeldBy"] = y["HeldBy"].ToString();
+                    Session["Leader"] = y["Leader"].ToString();
+                    Session["ControlNo"] = y["ControlNo"].ToString();
+                    Session["FixedFieldData"] = y["FixedFieldData"].ToString();
+                    Session["NatlBibliographyNo"] = y["NatlBibliographyNo"].ToString();
+                    Session["ISBN10"] = y["ISBN10"].ToString();
+                    Session["ISBN13"] = y["ISBN13"].ToString();
+                    Session["SysControlNo"] = y["SysControlNo"].ToString();
+                    Session["CatalogingSource"] = y["CatalogingSource"].ToString();
+                    Session["LCCallNo"] = y["LCCallNo"].ToString();
+                    //TODO: Error Handling
+
+                }
             }
         }
     }
