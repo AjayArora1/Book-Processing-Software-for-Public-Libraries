@@ -110,6 +110,8 @@
                     <p>Natl Bibliography Info: <asp:TextBox runat="server" ID="txt_checkin_natl_bibliography_info"></asp:TextBox></p>
                     <p>Cataloging Source: <asp:TextBox runat="server" ID="txt_checkin_cataloging_source"></asp:TextBox></p>
                     <p>LLC Call Number: <asp:TextBox runat="server" ID="txt_checkin_llc_call_number"></asp:TextBox></p>
+                    <p>General Note: <asp:TextBox runat="server" ID="txt_checkin_general_note"></asp:TextBox></p>
+                    <p>Bibliography Note: <asp:TextBox runat="server" ID="txt_checkin_bibliography_note"></asp:TextBox></p>
                 </div>
             </div>
             <!--End of "CheckIn" Page Content-->

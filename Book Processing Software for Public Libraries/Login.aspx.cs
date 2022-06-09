@@ -97,9 +97,10 @@ public partial class Login : System.Web.UI.Page
                     Session["NatlBibliographyNo"] = y["NatlBibliographyNo"].ToString();
                     Session["ISBN10"] = y["ISBN10"].ToString();
                     Session["ISBN13"] = y["ISBN13"].ToString();
-                    Session["SysControlNo"] = y["SysControlNo"].ToString();
                     Session["CatalogingSource"] = y["CatalogingSource"].ToString();
                     Session["LCCallNo"] = y["LCCallNo"].ToString();
+                    Session["isHeld"] = y["isHeld"].ToString();
+                    Session["dueDate"] = y["dueDate"].ToString();
                     //TODO: Error Handling
 
                 }
