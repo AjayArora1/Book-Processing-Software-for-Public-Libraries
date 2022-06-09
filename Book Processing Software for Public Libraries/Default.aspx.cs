@@ -9,6 +9,10 @@ using System.Data.SqlClient;
 
 public partial class _Default : System.Web.UI.Page
 {
+
+    /// <summary>
+    /// Initial state when the page first loads
+    /// </summary>
     protected void Page_Load(object sender, EventArgs e)
     {
         about_content.Visible = true;
@@ -31,7 +35,7 @@ public partial class _Default : System.Web.UI.Page
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
 
-        if (Session["userID"]!=null) //If the user is logged in.
+        if (Session["userID"] != null) //If the user is logged in.
         {
             welcomeText.Text = "Welcome, you are logged in as " + Session["Username"];
             libCardText.Text = "Your library card number is: " + Session["userID"];
@@ -39,7 +43,9 @@ public partial class _Default : System.Web.UI.Page
             adminText.Visible = true;
             login.Visible = false;
             logout.Visible = true;
-        } else {                    //If the user is not logged in.
+        }
+        else
+        {                    //If the user is not logged in.
             welcomeText.Text = "Welcome! you are not logged in.";
             libCardText.Visible = false;
             adminText.Visible = false;
@@ -57,8 +63,9 @@ public partial class _Default : System.Web.UI.Page
             adminText.Text = "You are an admin.";
             commonTasks.Visible = true;
             users.Visible = true;
-            holds.Visible = true; 
-        } else                                  //If user is not an administrator.
+            holds.Visible = true;
+        }
+        else                                  //If user is not an administrator.
         {
             adminText.Text = "You are not an admin.";
             commonTasks.Visible = false;
@@ -66,6 +73,11 @@ public partial class _Default : System.Web.UI.Page
             holds.Visible = false;
         }
     }
+
+    /// <summary>
+    /// Navbar Buttons
+    /// </summary>
+    
     protected void Login_Click(object sender, EventArgs e)
     {
         Response.Redirect("Login.aspx");
@@ -491,6 +503,11 @@ public partial class _Default : System.Web.UI.Page
         transitholdprocessing_content.Visible = true;
     }
 
+    /// <summary>
+    /// Functionality for the buttons on each page after data is entered.
+    /// </summary>
+    
+    //When clicking the button on the check in page after all data is entered.
     protected void btn_checkin_item(object sender, EventArgs e)
     {
         string checkin_item_id = txt_checkin_ID.Text;
@@ -551,5 +568,21 @@ public partial class _Default : System.Web.UI.Page
         cmd.Parameters.AddWithValue("LCCallNo", checkin_item_LLC_call_no);
         cmd.ExecuteNonQuery();
         connection.Close();
+        //TODO: Error Handling and Success/Failure Message
+    }
+
+    //When clicking the button on the check out page after all data is entered.
+    protected void btn_checkout_item(object sender, EventArgs e)
+    {
+        string checkout_item_id = txt_checkout_ID.Text;
+        string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
+        SqlConnection connection = new SqlConnection(sqlstring);
+        connection.Open();
+        string removequery = "DELETE FROM dbo.Materials WHERE Id = @Id";
+        SqlCommand cmd = new SqlCommand(removequery, connection);
+        cmd.Parameters.AddWithValue("Id", checkout_item_id);
+        cmd.ExecuteNonQuery();
+        connection.Close();
+        //TODO: Error Handling and Success/Failure Message
     }
 }

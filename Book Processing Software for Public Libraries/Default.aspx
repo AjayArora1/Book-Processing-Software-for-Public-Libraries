@@ -118,7 +118,7 @@
             <div class="checkout_content" runat="server" id="checkout_content" Visible="false">
                 <h1><asp:Label runat="server">Check-Out</asp:Label></h1>
                 <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkout_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <asp:Button runat="server" class="buttons" ID="btn_checkout_item" Text="Check Out"/>
+                <asp:Button runat="server" class="buttons" ID="checkout_item" OnClick="btn_checkout_item" Text="Check Out"/>
             </div>
             <!--End of "CheckOut" Page Content-->
 
