@@ -529,43 +529,86 @@ public partial class _Default : System.Web.UI.Page
         string checkin_item_cataloging_source = txt_checkin_cataloging_source.Text;
         string checkin_item_LLC_call_no = txt_checkin_llc_call_number.Text;
 
-        string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
-        SqlConnection connection = new SqlConnection(sqlstring);
-        connection.Open();
+        //If the item ID is 1-13 characters (Error)
+        if (checkin_item_id.Length < 14 && checkin_item_id.Length > 0)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('The item ID is too short. It must be 14 numeric characters starting with 39065. The format should be 39065XXXXXXXXX.');", true);
+        }
+        //If the item ID is 0 characters (Error)
+        else if (checkin_item_id.Length == 0)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert2", "alert('You must enter an item ID.');", true);
+        }
+        //If the item ID does not contain 39065 (Error)
+        else if (!checkin_item_id.Contains("39065"))
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert2", "alert('Item ID must start with 39065');", true);
+        }
+        //If the item has no title (Error)
+        else if (checkin_item_title.Length == 0)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert3", "alert('You must enter a title for the item.');", true);
+        }
+        //If the item has no Author (Error)
+        else if (checkin_item_authors.Length == 0)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert4", "alert('You must enter an author for the item.');", true);
+        }
+        //If the item has no dewey call number (Error)
+        else if (checkin_item_dewey_call_number.Length == 0)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert5", "alert('You must enter a dewey call number for the item.');", true);
+        }
+        //If ISBN10 is the wrong length (Error)
+        else if (checkin_item_ISBN10.Length != 10)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert6", "alert('ISBN10 is required and must be 10 digits long.');", true);
+        }
+        //If ISBN13 is the wrong length (Error)
+        else if (checkin_item_ISBN13.Length != 13)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert7", "alert('ISBN13 is required and must be 13 digits long.');", true);
+        }
+        else //If there are no errors, proceed with adding the item to the database.
+        { 
+            string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
+            SqlConnection connection = new SqlConnection(sqlstring);
+            connection.Open();
 
-        string insertquery = "insert into dbo.Materials(Id, DeweyCallNo, Title, " +
-            "PublicationInfo, PhysicalDescription, GeneralNote, " +
-            "BibliographyNote, ActionNote, SubjectTerm, " +
-            "Authors, Leader, ControlNo, " +
-            "FixedFieldData, NatlBibliographyNo, ISBN10, " +
-            "ISBN13, CatalogingSource, LCCallNo) " +
-            "values(@Id, @DeweyCallNo, @Title, @PublicationInfo, " +
-            "@PhysicalDescription, @GeneralNote, @BibliographyNote, " +
-            "@ActionNote, @SubjectTerm, @Authors, @Leader, " +
-            "@ControlNo, @FixedFieldData, @NatlBibliographyNo, @ISBN10, " +
-            "@ISBN13, @CatalogingSource, @LCCallNo)";
-        SqlCommand cmd = new SqlCommand(insertquery, connection);
-        cmd.Parameters.AddWithValue("Id", checkin_item_id);
-        cmd.Parameters.AddWithValue("DeweyCallNo", checkin_item_dewey_call_number);
-        cmd.Parameters.AddWithValue("Title", checkin_item_title);
-        cmd.Parameters.AddWithValue("PublicationInfo", checkin_item_publication_info);
-        cmd.Parameters.AddWithValue("PhysicalDescription", checkin_item_physical_description);
-        cmd.Parameters.AddWithValue("GeneralNote", checkin_item_general_note);
-        cmd.Parameters.AddWithValue("BibliographyNote", checkin_item_bibliography_note);
-        cmd.Parameters.AddWithValue("ActionNote", checkin_item_action_note);
-        cmd.Parameters.AddWithValue("SubjectTerm", checkin_item_subject_term);
-        cmd.Parameters.AddWithValue("Authors", checkin_item_authors);
-        cmd.Parameters.AddWithValue("Leader", checkin_item_leader);
-        cmd.Parameters.AddWithValue("ControlNo", checkin_item_control_no);
-        cmd.Parameters.AddWithValue("FixedFieldData", checkin_item_fixed_field_data);
-        cmd.Parameters.AddWithValue("NatlBibliographyNo", checkin_item_natl_bibliography_no);
-        cmd.Parameters.AddWithValue("ISBN10", checkin_item_ISBN10);
-        cmd.Parameters.AddWithValue("ISBN13", checkin_item_ISBN13);
-        cmd.Parameters.AddWithValue("CatalogingSource", checkin_item_cataloging_source);
-        cmd.Parameters.AddWithValue("LCCallNo", checkin_item_LLC_call_no);
-        cmd.ExecuteNonQuery();
-        connection.Close();
-        //TODO: Error Handling and Success/Failure Message
+            string insertquery = "insert into dbo.Materials(Id, DeweyCallNo, Title, " +
+                "PublicationInfo, PhysicalDescription, GeneralNote, " +
+                "BibliographyNote, ActionNote, SubjectTerm, " +
+                "Authors, Leader, ControlNo, " +
+                "FixedFieldData, NatlBibliographyNo, ISBN10, " +
+                "ISBN13, CatalogingSource, LCCallNo) " +
+                "values(@Id, @DeweyCallNo, @Title, @PublicationInfo, " +
+                "@PhysicalDescription, @GeneralNote, @BibliographyNote, " +
+                "@ActionNote, @SubjectTerm, @Authors, @Leader, " +
+                "@ControlNo, @FixedFieldData, @NatlBibliographyNo, @ISBN10, " +
+                "@ISBN13, @CatalogingSource, @LCCallNo)";
+            SqlCommand cmd = new SqlCommand(insertquery, connection);
+            cmd.Parameters.AddWithValue("Id", checkin_item_id);
+            cmd.Parameters.AddWithValue("DeweyCallNo", checkin_item_dewey_call_number);
+            cmd.Parameters.AddWithValue("Title", checkin_item_title);
+            cmd.Parameters.AddWithValue("PublicationInfo", checkin_item_publication_info);
+            cmd.Parameters.AddWithValue("PhysicalDescription", checkin_item_physical_description);
+            cmd.Parameters.AddWithValue("GeneralNote", checkin_item_general_note);
+            cmd.Parameters.AddWithValue("BibliographyNote", checkin_item_bibliography_note);
+            cmd.Parameters.AddWithValue("ActionNote", checkin_item_action_note);
+            cmd.Parameters.AddWithValue("SubjectTerm", checkin_item_subject_term);
+            cmd.Parameters.AddWithValue("Authors", checkin_item_authors);
+            cmd.Parameters.AddWithValue("Leader", checkin_item_leader);
+            cmd.Parameters.AddWithValue("ControlNo", checkin_item_control_no);
+            cmd.Parameters.AddWithValue("FixedFieldData", checkin_item_fixed_field_data);
+            cmd.Parameters.AddWithValue("NatlBibliographyNo", checkin_item_natl_bibliography_no);
+            cmd.Parameters.AddWithValue("ISBN10", checkin_item_ISBN10);
+            cmd.Parameters.AddWithValue("ISBN13", checkin_item_ISBN13);
+            cmd.Parameters.AddWithValue("CatalogingSource", checkin_item_cataloging_source);
+            cmd.Parameters.AddWithValue("LCCallNo", checkin_item_LLC_call_no);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+            //TODO: Error Handling and Success/Failure Message
+        }
     }
 
     //When clicking the button on the check out page after all data is entered.
@@ -578,8 +621,10 @@ public partial class _Default : System.Web.UI.Page
         string removequery = "DELETE FROM dbo.Materials WHERE Id = @Id";
         SqlCommand cmd = new SqlCommand(removequery, connection);
         cmd.Parameters.AddWithValue("Id", checkout_item_id);
-        cmd.ExecuteNonQuery();
+        int result = (Int32)cmd.ExecuteNonQuery();
         connection.Close();
-        //TODO: Error Handling and Success/Failure Message
+        if (result < 1) { 
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert8", "alert('This item does not exist.');", true);
+        }
     }
 }
