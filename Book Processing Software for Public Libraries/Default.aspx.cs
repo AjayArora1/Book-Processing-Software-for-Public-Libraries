@@ -627,4 +627,33 @@ public partial class _Default : System.Web.UI.Page
             ClientScript.RegisterStartupScript(this.GetType(), "myalert8", "alert('This item does not exist.');", true);
         }
     }
+
+    //When clicking the button on the renew item page after all data is entered.
+    protected void btn_renew_user_item(object sender, EventArgs e)
+    {
+        string renew_user_item_id = txt_renew_user_items_ID.Text;
+        string renew_user_item_due_date = txt_renew_user_items_new_due_date.Text;
+        string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
+        SqlConnection connection = new SqlConnection(sqlstring);
+        connection.Open();
+        string updatequery = "UPDATE dbo.Materials SET dueDate = @dueDate WHERE Id = @Id";
+        SqlCommand cmd = new SqlCommand(updatequery, connection);
+        cmd.Parameters.AddWithValue("Id", renew_user_item_id);
+        cmd.Parameters.AddWithValue("dueDate", renew_user_item_due_date);
+        int result = (Int32)cmd.ExecuteNonQuery();
+        connection.Close();
+        if (result < 1)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert9", "alert('This item does not exist.');", true);
+        }
+    }
+
+    //When clicking the button on the bill user page after all data is entered.
+    protected void btn_bill_user(object sender, EventArgs e)
+    {
+
+        string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
+        SqlConnection connection = new SqlConnection(sqlstring);
+        connection.Open();
+    }
 }

@@ -127,9 +127,9 @@
             <!--"RenewUserItems" Page Content-->
             <div class="renewuseritems_content" runat="server" id="renewuseritems_content" Visible="false">
                 <h1><asp:Label runat="server">Renew User Items</asp:Label></h1>
-                <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_renew_user_items_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>New Due Date: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_renew_user_items_new_due_date" MaxLength="10"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <asp:Button runat="server" class="buttons" ID="btn_renew_user_item" Text="Renew Item"/>
+                <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_renew_user_items_ID" MaxLength="14" Placeholder="39065XXXXXXXXX"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>New Due Date: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_renew_user_items_new_due_date" MaxLength="8" Placeholder="MMDDYYYY"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <asp:Button runat="server" class="buttons" ID="renew_user_item" OnClick="btn_renew_user_item" Text="Renew Item"/>
             </div>
             <!--End of "RenewUserItems" Page Content-->
 
@@ -138,7 +138,7 @@
                 <h1><asp:Label runat="server">Bill a User</asp:Label></h1>
                 <p>User to bill's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_bill_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <p>Amount to bill user: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_bill_user_amount" MaxLength="10"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <asp:Button runat="server" class="buttons" ID="btn_bill_user" Text="Bill User"/>
+                <asp:Button runat="server" class="buttons" ID="bill_user" OnClick="btn_bill_user" Text="Bill User"/>
             </div>
             <!--End of "BillUser" Page Content-->
 
