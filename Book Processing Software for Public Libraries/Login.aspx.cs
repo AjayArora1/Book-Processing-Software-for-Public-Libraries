@@ -98,6 +98,7 @@ public partial class Login : System.Web.UI.Page
                     Session["Username"] = x["Username"].ToString();
                     Session["Password"] = x["Password"].ToString();
                     Session["isAdmin"] = x["isAdmin"].ToString();
+                    Session["fees"] = x["fees"].ToString();
                     errorLabel.Visible = false;
                     Response.Redirect("default.aspx"); //Redirect to the homepage after logging in.
                 }

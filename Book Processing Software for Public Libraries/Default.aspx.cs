@@ -636,7 +636,7 @@ public partial class _Default : System.Web.UI.Page
         string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
         SqlConnection connection = new SqlConnection(sqlstring);
         connection.Open();
-        string updatequery = "UPDATE dbo.Materials SET dueDate = @dueDate WHERE Id = @Id";
+        string updatequery = "UPDATE dbo.Materials SET dueDate = @dueDate WHERE (Id = @Id AND isHeld = 'Yes')";
         SqlCommand cmd = new SqlCommand(updatequery, connection);
         cmd.Parameters.AddWithValue("Id", renew_user_item_id);
         cmd.Parameters.AddWithValue("dueDate", renew_user_item_due_date);
@@ -644,16 +644,28 @@ public partial class _Default : System.Web.UI.Page
         connection.Close();
         if (result < 1)
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "myalert9", "alert('This item does not exist.');", true);
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert9", "alert('This item does either does not exist, or it is not on hold.');", true);
         }
     }
 
     //When clicking the button on the bill user page after all data is entered.
     protected void btn_bill_user(object sender, EventArgs e)
     {
-
+        string bill_user_id = txt_bill_user_ID.Text;
+        string bill_user_amount = txt_bill_user_amount.Text;
         string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
         SqlConnection connection = new SqlConnection(sqlstring);
         connection.Open();
+
+        string updatequery = "UPDATE dbo.Users SET fees = @fees WHERE userID = @userID";
+        SqlCommand cmd = new SqlCommand(updatequery, connection);
+        cmd.Parameters.AddWithValue("userID", bill_user_id);
+        cmd.Parameters.AddWithValue("fees", bill_user_amount);
+        int result = (Int32)cmd.ExecuteNonQuery();
+        connection.Close();
+        if (result < 1)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert10", "alert('This user does not exist.');", true);
+        }
     }
 }
