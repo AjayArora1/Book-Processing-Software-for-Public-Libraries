@@ -668,4 +668,36 @@ public partial class _Default : System.Web.UI.Page
             ClientScript.RegisterStartupScript(this.GetType(), "myalert10", "alert('This user does not exist.');", true);
         }
     }
+
+    //When clicking the button on the show user page after all data is entered.
+    protected void btn_show_user(object sender, EventArgs e)
+    {
+        string show_user_id = txt_show_user_ID.Text;
+        using (SqlConnection sqlcon = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True;"))
+        {
+            sqlcon.Open();
+            string Query = "SELECT * FROM dbo.Users WHERE userID = @userID";
+            SqlCommand sqlCmd = new SqlCommand(Query, sqlcon);
+            sqlCmd.Parameters.AddWithValue("userID", show_user_id);
+            //Reads each cell of a row in the materials database, so we can access all their user information from the database.
+            using (SqlDataReader y = sqlCmd.ExecuteReader())
+            {
+                while (y.Read())
+                {
+                    showUserID.Text = "\nUser ID: " + show_user_id + "\n";
+                    showID.Text = "System ID: " + y["ID"].ToString() + "\n";
+                    showUserPIN.Text = "User PIN: " + y["userPIN"].ToString() + "\n";
+                    showUsername.Text = "Username: " + y["Username"].ToString() + "\n";
+                    showPassword.Text = "Password: " + y["Password"].ToString() + "\n";
+                    showFees.Text = "Fees Due: " + y["fees"].ToString() + "\n";
+                    showIsAdmin.Text = "Is Admin: " + y["isAdmin"].ToString();
+                }
+                if (!y.HasRows)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert11", "alert('This user does not exist.');", true);
+                }
+            }
+            sqlcon.Close();
+        } 
+    }
 }

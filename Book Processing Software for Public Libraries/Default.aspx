@@ -146,7 +146,14 @@
             <div class="showuser_content" runat="server" id="showuser_content" Visible="false">
                 <h1><asp:Label runat="server">Show User</asp:Label></h1>
                 <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_show_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <asp:Button runat="server" class="buttons" ID="btn_show_user" Text="Show User Info"/>
+                <asp:Button runat="server" class="buttons" ID="show_user" OnClick="btn_show_user" Text="Show User Info"/><br />
+                <asp:Label runat="server" ID="showUserID"></asp:Label><br />
+                <asp:Label runat="server" ID="showID"></asp:Label><br />
+                <asp:Label runat="server" ID="showUserPIN"></asp:Label><br />
+                <asp:Label runat="server" ID="showUsername"></asp:Label><br />
+                <asp:Label runat="server" ID="showPassword"></asp:Label><br />
+                <asp:Label runat="server" ID="showFees"></asp:Label><br />
+                <asp:Label runat="server" ID="showIsAdmin"></asp:Label><br />
             </div>
             <!--End of "ShowUser" Page Content-->
 
