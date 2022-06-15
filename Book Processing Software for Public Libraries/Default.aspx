@@ -173,6 +173,11 @@
             <div class="modifyuser_content" runat="server" id="modifyuser_content" Visible="false">
                 <h1><asp:Label runat="server">Modify User</asp:Label></h1>
                 <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>User's New PIN: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_new_PIN" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>User's New Username: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_new_Username" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>User's New Password: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_new_Password" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Is the user now an admin?: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_new_isAdmin" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Total User Fees: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_new_fees" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="modify_user" OnClick="btn_modify_user" Text="Modify User Account"/>
             </div>
             <!--End of "ModifyUser" Page Content-->

@@ -751,6 +751,30 @@ public partial class _Default : System.Web.UI.Page
     //When clicking the button on the modify user page after all data is entered.
     protected void btn_modify_user(object sender, EventArgs e)
     {
+        string modify_user_oldid = txt_modify_user_ID.Text;
+        string modify_user_pin = txt_modify_user_new_PIN.Text;
+        string modify_user_username = txt_modify_user_new_Username.Text;
+        string modify_user_password = txt_modify_user_new_Password.Text;
+        string modify_user_isadmin = txt_modify_user_new_isAdmin.Text;
+        string modify_user_fees = txt_modify_user_new_fees.Text;
+        string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
+        SqlConnection connection = new SqlConnection(sqlstring);
+        connection.Open();
+
+        string updatequery = "UPDATE dbo.Users SET userPIN = @userPIN, Username = @Username, Password = @Password, isAdmin = @isAdmin, fees = @fees WHERE userID = @userID";
+        SqlCommand cmd = new SqlCommand(updatequery, connection);
+        cmd.Parameters.AddWithValue("userID", modify_user_oldid);
+        cmd.Parameters.AddWithValue("userPIN", modify_user_pin);
+        cmd.Parameters.AddWithValue("Username", modify_user_username);
+        cmd.Parameters.AddWithValue("Password", modify_user_password);
+        cmd.Parameters.AddWithValue("isAdmin", modify_user_isadmin);
+        cmd.Parameters.AddWithValue("fees", modify_user_fees);
+        int result = (Int32)cmd.ExecuteNonQuery();
+        connection.Close();
+        if (result < 1)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert15", "alert('Error: Either this user does not exist or not all appropriate fields were filled in.');", true);
+        }
     }
 
     //When clicking the button on the remove user page after all data is entered.
