@@ -193,7 +193,7 @@
             <!--"Items" Page Content-->
             <div class="items_content" runat="server" id="items_content" Visible="false">
                 <h1><asp:Label runat="server">Items</asp:Label></h1>
-                <p>Item Search: <asp:TextBox runat="server" ID="txt_item_search"></asp:TextBox></p>
+                <asp:PlaceHolder runat="server" ID="placeholder1"></asp:PlaceHolder>
                 <!--TODO: Add list of books, and use the search bar above to be able to search for items that match the search query. like in a previous project.-->
             </div>
             <!--End of "Items" Page Content-->

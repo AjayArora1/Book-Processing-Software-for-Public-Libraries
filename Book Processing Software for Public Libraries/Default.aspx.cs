@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
+using System.Text;
 
 public partial class _Default : System.Web.UI.Page
 {
@@ -71,6 +73,11 @@ public partial class _Default : System.Web.UI.Page
             commonTasks.Visible = false;
             users.Visible = false;
             holds.Visible = false;
+        }
+
+        if (items_content.Visible == true)
+        {
+            //
         }
     }
 
@@ -294,6 +301,52 @@ public partial class _Default : System.Web.UI.Page
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
+
+        //Display Materials Table
+        StringBuilder table = new StringBuilder();
+        SqlConnection itemCon = new SqlConnection();
+        itemCon.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+        itemCon.Open();
+        SqlCommand itemCmd = new SqlCommand();
+        itemCmd.CommandText = "Select * from dbo.Materials";
+        itemCmd.Connection = itemCon;
+        SqlDataReader rd = itemCmd.ExecuteReader();
+        table.Append("<table border='1'>");
+        table.Append("<tr><th>Id</th><th>DeweyCallNo</th><th>Title</th><th>Authors</th><th>ISBN10</th><th>ISBN13</th><th>CatalogingSource</th><th>isHeld</th><th>dueDate</th>");
+        table.Append("</tr>");
+
+        if (rd.HasRows)
+        {
+            while (rd.Read())
+            {
+                table.Append("<tr>");
+                table.Append("<td>" + rd[0] + "</td>");
+                table.Append("<td>" + rd[1] + "</td>");
+                table.Append("<td>" + rd[2] + "</td>");
+                //table.Append("<td>" + rd[3] + "</td>");
+                //table.Append("<td>" + rd[4] + "</td>");
+                //table.Append("<td>" + rd[5] + "</td>");
+                //table.Append("<td>" + rd[6] + "</td>");
+                //table.Append("<td>" + rd[7] + "</td>");
+                //table.Append("<td>" + rd[8] + "</td>");
+                table.Append("<td>" + rd[9] + "</td>");
+                //table.Append("<td>" + rd[10] + "</td>");
+                //table.Append("<td>" + rd[11] + "</td>");
+                //table.Append("<td>" + rd[12] + "</td>");
+                //table.Append("<td>" + rd[13] + "</td>");
+                table.Append("<td>" + rd[14] + "</td>");
+                table.Append("<td>" + rd[15] + "</td>");
+                table.Append("<td>" + rd[16] + "</td>");
+                //table.Append("<td>" + rd[17] + "</td>");
+                table.Append("<td>" + rd[18] + "</td>");
+                table.Append("<td>" + rd[19] + "</td>");
+                table.Append("</tr>");
+            }
+        }
+        table.Append("</table>");
+        placeholder1.Controls.Add(new Literal { Text = table.ToString() });
+        rd.Close();
+
     }
 
     protected void btnPlaceHold_Click(object sender, EventArgs e)
