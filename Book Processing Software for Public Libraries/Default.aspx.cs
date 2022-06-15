@@ -312,7 +312,7 @@ public partial class _Default : System.Web.UI.Page
         itemCmd.Connection = itemCon;
         SqlDataReader rd = itemCmd.ExecuteReader();
         table.Append("<table border='1'>");
-        table.Append("<tr><th>Id</th><th>DeweyCallNo</th><th>Title</th><th>Authors</th><th>ISBN10</th><th>ISBN13</th><th>CatalogingSource</th><th>isHeld</th><th>dueDate</th>");
+        table.Append("<tr><th>Id</th><th>DeweyCallNo</th><th>Title</th><th>Authors</th><th>ISBN10</th><th>ISBN13</th><th>CatalogingSource</th><th>isHeld</th><th>dueDate</th><th>heldBy</th>");
         table.Append("</tr>");
 
         if (rd.HasRows)
@@ -340,6 +340,7 @@ public partial class _Default : System.Web.UI.Page
                 //table.Append("<td>" + rd[17] + "</td>");
                 table.Append("<td>" + rd[18] + "</td>");
                 table.Append("<td>" + rd[19] + "</td>");
+                table.Append("<td>" + rd[20] + "</td>");
                 table.Append("</tr>");
             }
         }
@@ -845,6 +846,32 @@ public partial class _Default : System.Web.UI.Page
         if (result < 1)
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert14", "alert('This user does not exist.');", true);
+        }
+    }
+
+    //When clicking the button on the remove user page after all data is entered.
+    protected void btn_place_hold(object sender, EventArgs e)
+    {
+
+        string place_hold_id = txt_place_hold_item_ID.Text;
+        string place_hold_isHeld = "Yes";
+        string place_hold_dueDate = DateTime.Now.AddDays(7).ToString("MMddyyyy");
+        string place_hold_heldBy = Session["userID"].ToString();
+        string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
+        SqlConnection connection = new SqlConnection(sqlstring);
+        connection.Open();
+
+        string updatequery = "UPDATE dbo.Materials SET isHeld = @isHeld, dueDate = @dueDate, heldBy = @heldBy WHERE Id = @Id AND isHeld != 'Yes'";
+        SqlCommand cmd = new SqlCommand(updatequery, connection);
+        cmd.Parameters.AddWithValue("Id", place_hold_id);
+        cmd.Parameters.AddWithValue("isHeld", place_hold_isHeld);
+        cmd.Parameters.AddWithValue("dueDate", place_hold_dueDate);
+        cmd.Parameters.AddWithValue("heldBy", place_hold_heldBy);
+        int result = (Int32)cmd.ExecuteNonQuery();
+        connection.Close();
+        if (result < 1)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert16", "alert('Error: Either this user does not exist or this item is already held.');", true);
         }
     }
 }

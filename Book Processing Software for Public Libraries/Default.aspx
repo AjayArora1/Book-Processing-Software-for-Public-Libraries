@@ -201,9 +201,8 @@
             <!--"Place Hold" Page Content-->
             <div class="placehold_content" runat="server" id="placehold_content" Visible="false">
                 <h1><asp:Label runat="server">Place a Hold</asp:Label></h1>
-                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_place_hold_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_place_hold_item_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <asp:Button runat="server" class="buttons" ID="btn_place_hold" Text="Place Hold"/>
+                <asp:Button runat="server" class="buttons" ID="place_hold" OnClick="btn_place_hold" Text="Place Hold"/>
                 
             </div>
             <!--End of "Place Hold" Page Content-->
