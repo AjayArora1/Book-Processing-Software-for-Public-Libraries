@@ -164,7 +164,8 @@
                 <p>Library Card PIN: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_register_user_library_card_PIN" MaxLength="7"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <p>Username: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_register_user_username"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <p>Password: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_register_user_password"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <asp:CheckBox runat="server" Text="Is this user going to be an administrator?"/><strong style="color:red;">(Required)</strong>
+                <asp:CheckBox runat="server" Text="Is this user going to be an administrator?" ID="checkbox_register_user_isAdmin"/><strong style="color:red;">(Required)</strong>
+                <asp:Button runat="server" class="buttons" ID="register_user" OnClick="btn_register_user" Text="Show User Info"/><br />
             </div>
             <!--End of "RegisterUser" Page Content-->
 
@@ -172,7 +173,7 @@
             <div class="modifyuser_content" runat="server" id="modifyuser_content" Visible="false">
                 <h1><asp:Label runat="server">Modify User</asp:Label></h1>
                 <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <asp:Button runat="server" class="buttons" ID="btn_modify_user" Text="Modify User Account"/>
+                <asp:Button runat="server" class="buttons" ID="modify_user" OnClick="btn_modify_user" Text="Modify User Account"/>
             </div>
             <!--End of "ModifyUser" Page Content-->
 
@@ -180,7 +181,7 @@
             <div class="removeuser_content" runat="server" id="removeuser_content" Visible="false">
                 <h1><asp:Label runat="server">Remove User</asp:Label></h1>
                 <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_remove_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <asp:Button runat="server" class="buttons" ID="btn_remove_user" Text="Remove User Account"/>
+                <asp:Button runat="server" class="buttons" ID="remove_user" OnClick="btn_remove_user" Text="Remove User Account"/>
             </div>
             <!--End of "RemoveUser" Page Content-->
 

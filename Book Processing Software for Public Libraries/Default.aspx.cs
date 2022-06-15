@@ -77,7 +77,7 @@ public partial class _Default : System.Web.UI.Page
     /// <summary>
     /// Navbar Buttons
     /// </summary>
-    
+
     protected void Login_Click(object sender, EventArgs e)
     {
         Response.Redirect("Login.aspx");
@@ -506,7 +506,7 @@ public partial class _Default : System.Web.UI.Page
     /// <summary>
     /// Functionality for the buttons on each page after data is entered.
     /// </summary>
-    
+
     //When clicking the button on the check in page after all data is entered.
     protected void btn_checkin_item(object sender, EventArgs e)
     {
@@ -570,7 +570,7 @@ public partial class _Default : System.Web.UI.Page
             ClientScript.RegisterStartupScript(this.GetType(), "myalert7", "alert('ISBN13 is required and must be 13 digits long.');", true);
         }
         else //If there are no errors, proceed with adding the item to the database.
-        { 
+        {
             string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
             SqlConnection connection = new SqlConnection(sqlstring);
             connection.Open();
@@ -623,7 +623,8 @@ public partial class _Default : System.Web.UI.Page
         cmd.Parameters.AddWithValue("Id", checkout_item_id);
         int result = (Int32)cmd.ExecuteNonQuery();
         connection.Close();
-        if (result < 1) { 
+        if (result < 1)
+        {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert8", "alert('This item does not exist.');", true);
         }
     }
@@ -698,6 +699,62 @@ public partial class _Default : System.Web.UI.Page
                 }
             }
             sqlcon.Close();
-        } 
+        }
+    }
+
+    //When clicking the button on the register user page after all data is entered.
+    protected void btn_register_user(object sender, EventArgs e)
+    {
+        
+        string register_user_id = txt_register_user_library_card_number.Text;
+        string register_user_pin = txt_register_user_library_card_PIN.Text;
+        string register_user_username = txt_register_user_username.Text;
+        string register_user_password = txt_register_user_password.Text;
+        string register_user_isAdmin = "";
+        if (checkbox_register_user_isAdmin.Checked == true)
+        {
+            register_user_isAdmin = "Yes";
+        } else
+        {
+            register_user_isAdmin = "No";
+        }
+        string register_user_fees = "$0";
+
+        if (register_user_id.Length < 14)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert12", "alert('User ID must be 14 digits long.');", true);
+        }
+        else if (!register_user_id.Contains("29065"))
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert13", "alert('User ID must start with 29065');", true);
+        } else { 
+            string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
+            SqlConnection connection = new SqlConnection(sqlstring);
+            connection.Open();
+
+            string insertquery = "insert into dbo.Users(Username, Password, isAdmin, userID, userPIN, fees) values(@Username, @Password, @isAdmin, @userID, @userPIN, @fees)";
+            SqlCommand cmd = new SqlCommand(insertquery, connection);
+            
+            cmd.Parameters.AddWithValue("userID", register_user_id);
+            cmd.Parameters.AddWithValue("userPIN", register_user_pin);
+            cmd.Parameters.AddWithValue("Username", register_user_username);
+            cmd.Parameters.AddWithValue("Password", register_user_password);
+            cmd.Parameters.AddWithValue("isAdmin", register_user_isAdmin);
+            cmd.Parameters.AddWithValue("fees", register_user_fees);
+
+            cmd.ExecuteNonQuery();
+            connection.Close();
+            //TODO: Error Handling and Success/Failure Message
+        }
+    }
+
+    //When clicking the button on the modify user page after all data is entered.
+    protected void btn_modify_user(object sender, EventArgs e)
+    {
+    }
+
+    //When clicking the button on the remove user page after all data is entered.
+    protected void btn_remove_user(object sender, EventArgs e)
+    {
     }
 }
