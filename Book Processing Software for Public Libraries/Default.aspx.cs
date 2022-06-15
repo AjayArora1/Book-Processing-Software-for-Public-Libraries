@@ -756,5 +756,18 @@ public partial class _Default : System.Web.UI.Page
     //When clicking the button on the remove user page after all data is entered.
     protected void btn_remove_user(object sender, EventArgs e)
     {
+        string remove_user_id = txt_remove_user_ID.Text;
+        string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
+        SqlConnection connection = new SqlConnection(sqlstring);
+        connection.Open();
+        string removequery = "DELETE FROM dbo.Users WHERE userID = @userID";
+        SqlCommand cmd = new SqlCommand(removequery, connection);
+        cmd.Parameters.AddWithValue("userID", remove_user_id);
+        int result = (Int32)cmd.ExecuteNonQuery();
+        connection.Close();
+        if (result < 1)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert14", "alert('This user does not exist.');", true);
+        }
     }
 }
