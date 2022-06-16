@@ -28,11 +28,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -109,11 +109,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -132,11 +132,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -155,11 +155,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -178,11 +178,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -201,11 +201,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -224,11 +224,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -247,11 +247,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -270,11 +270,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = true;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -293,11 +293,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = true;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -363,11 +363,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = true;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -386,11 +386,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = true;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = true;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -409,11 +409,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = true;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = true;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -432,11 +432,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = true;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -455,11 +455,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = true;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -478,11 +478,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = true;
+        //removetitleholds_content.Visible = true;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -501,11 +501,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = true;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = false;
@@ -524,11 +524,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = true;
         transitholdprocessing_content.Visible = false;
@@ -547,11 +547,11 @@ public partial class _Default : System.Web.UI.Page
         removeuser_content.Visible = false;
         items_content.Visible = false;
         placehold_content.Visible = false;
-        showuserholds_content.Visible = false;
-        modifyuserholds_content.Visible = false;
+        //showuserholds_content.Visible = false;
+        //modifyuserholds_content.Visible = false;
         removeuserholds_content.Visible = false;
         showtitleholds_content.Visible = false;
-        removetitleholds_content.Visible = false;
+        //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
         transitholdprocessing_content.Visible = true;
@@ -849,7 +849,7 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
-    //When clicking the button on the remove user page after all data is entered.
+    //When clicking the button on place hold after all data is entered.
     protected void btn_place_hold(object sender, EventArgs e)
     {
 
@@ -872,6 +872,32 @@ public partial class _Default : System.Web.UI.Page
         if (result < 1)
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert16", "alert('Error: Either this user does not exist or this item is already held.');", true);
+        }
+    }
+
+    //When clicking the button on remove hold after all data is entered.
+    protected void btn_remove_user_hold(object sender, EventArgs e)
+    {
+
+        string remove_hold_id = txt_remove_user_holds_item_ID.Text;
+        string remove_hold_isHeld = "No";
+        string remove_hold_dueDate = "";
+        string remove_hold_heldBy = "";
+        string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
+        SqlConnection connection = new SqlConnection(sqlstring);
+        connection.Open();
+
+        string updatequery = "UPDATE dbo.Materials SET isHeld = @isHeld, dueDate = @dueDate, heldBy = @heldBy WHERE Id = @Id AND isHeld = 'Yes'";
+        SqlCommand cmd = new SqlCommand(updatequery, connection);
+        cmd.Parameters.AddWithValue("Id", remove_hold_id);
+        cmd.Parameters.AddWithValue("isHeld", remove_hold_isHeld);
+        cmd.Parameters.AddWithValue("dueDate", remove_hold_dueDate);
+        cmd.Parameters.AddWithValue("heldBy", remove_hold_heldBy);
+        int result = (Int32)cmd.ExecuteNonQuery();
+        connection.Close();
+        if (result < 1)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert17", "alert('Error: Either this item does not exist or this item already has no holds on it.');", true);
         }
     }
 }

@@ -54,11 +54,11 @@
                     </button>
                     <div class="dropdown-content" id="holds" runat="server">
                         <asp:LinkButton runat="server" ID="btnPlaceHold" OnClick="btnPlaceHold_Click">Place Hold</asp:LinkButton>
-                        <asp:LinkButton runat="server" ID="btnShowUserHolds" OnClick="btnShowUserHolds_Click">Show User Holds</asp:LinkButton>
-                        <asp:LinkButton runat="server" ID="btnModifyUserHolds" OnClick="btnModifyUserHolds_Click">Modify User Holds</asp:LinkButton>
+                        <!--<asp:LinkButton runat="server" ID="btnShowUserHolds" OnClick="btnShowUserHolds_Click">Show User Holds</asp:LinkButton>-->
+                        <!--<asp:LinkButton runat="server" ID="btnModifyUserHolds" OnClick="btnModifyUserHolds_Click">Modify User Holds</asp:LinkButton>-->
                         <asp:LinkButton runat="server" ID="btnRemoveUserHolds" OnClick="btnRemoveUserHolds_Click">Remove User Holds</asp:LinkButton>
                         <asp:LinkButton runat="server" ID="btnShowTitleHolds" OnClick="btnShowTitleHolds_Click">Show Item/Title Holds</asp:LinkButton>
-                        <asp:LinkButton runat="server" ID="btnRemoveTitleHolds" OnClick="btnRemoveTitleHolds_Click">Remove Item/Title Holds</asp:LinkButton>
+                        <!--<asp:LinkButton runat="server" ID="btnRemoveTitleHolds" OnClick="btnRemoveTitleHolds_Click">Remove Item/Title Holds</asp:LinkButton>-->
                         <asp:LinkButton runat="server" ID="btnHoldPullList" OnClick="btnHoldPullList_Click">Hold Pull List</asp:LinkButton>
                         <asp:LinkButton runat="server" ID="btnPullListProcessing" OnClick="btnPullListProcessing_Click">Pull List Processing</asp:LinkButton>
                         <asp:LinkButton runat="server" ID="btnTransitHoldProcessing" OnClick="btnTransitHoldProcessing_Click">Transit Hold Processing</asp:LinkButton>
@@ -207,28 +207,27 @@
             </div>
             <!--End of "Place Hold" Page Content-->
 
-            <!--"Show User Hold" Page Content-->
+            <!--"Show User Hold" Page Content
             <div class="showuserholds_content" runat="server" id="showuserholds_content" Visible="false">
                 <h1><asp:Label runat="server">Show User Holds</asp:Label></h1>
                 <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_show_user_holds_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_show_user_holds" Text="Show User Holds"/>
-            </div>
+            </div>-->
             <!--End of "Show User Hold" Page Content-->
 
-            <!--"Modify User Hold" Page Content-->
+            <!--"Modify User Hold" Page Content
             <div class="modifyuserholds_content" runat="server" id="modifyuserholds_content" Visible="false">
                 <h1><asp:Label runat="server">Modify User Holds</asp:Label></h1>
                 <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_holds_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_modify_user_holds" Text="Modify User Holds"/>
             </div>
-            <!--End of "Modify User Hold" Page Content-->
+            End of "Modify User Hold" Page Content-->
 
             <!--"Remove User Hold" Page Content-->
             <div class="removeuserholds_content" runat="server" id="removeuserholds_content" Visible="false">
                 <h1><asp:Label runat="server">Remove User Holds</asp:Label></h1>
-                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_remove_user_holds_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <p>Hold's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_remove_user_holds_item_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <asp:Button runat="server" class="buttons" ID="btn_remove_user_hold" Text="Remove User Holds"/>
+                <asp:Button runat="server" class="buttons" ID="remove_user_hold" OnClick="btn_remove_user_hold" Text="Remove User Holds"/>
             </div>
             <!--End of "Remove User Hold" Page Content-->
 
@@ -240,7 +239,7 @@
             </div>
             <!--End of "Show Title Hold" Page Content-->
 
-            <!--"Remove Title Hold" Page Content-->
+            <!--"Remove Title Hold" Page Content
             <div class="removetitleholds_content" runat="server" id="removetitleholds_content" Visible="false">
                 <h1><asp:Label runat="server">Remove Title Holds</asp:Label></h1>
                 <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_remove_title_holds_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>

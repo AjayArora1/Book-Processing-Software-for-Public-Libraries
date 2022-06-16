@@ -250,7 +250,7 @@
     background-color: white;
 }
 
-.showuserholds_content {
+/*.showuserholds_content {
     border: 2px solid black;
     border-radius: 16px;
     text-align: left;
@@ -261,9 +261,9 @@
     -webkit-transform: translate(7.5%, -50%);
     transform: translate(7.5%, -50%);
     background-color: white;
-}
+}*/
 
-.modifyuserholds_content {
+/*.modifyuserholds_content {
     border: 2px solid black;
     border-radius: 16px;
     text-align: left;
@@ -274,7 +274,7 @@
     -webkit-transform: translate(7.5%, -50%);
     transform: translate(7.5%, -50%);
     background-color: white;
-}
+}*/
 
 .removeuserholds_content {
     border: 2px solid black;
@@ -302,7 +302,7 @@
     background-color: white;
 }
 
-.removetitleholds_content {
+/*.removetitleholds_content {
     border: 2px solid black;
     border-radius: 16px;
     text-align: left;
@@ -313,7 +313,7 @@
     -webkit-transform: translate(7.5%, -50%);
     transform: translate(7.5%, -50%);
     background-color: white;
-}
+}*/
 
 .holdpulllist_content {
     border: 2px solid black;
