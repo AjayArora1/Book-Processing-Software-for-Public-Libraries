@@ -56,12 +56,12 @@
                         <asp:LinkButton runat="server" ID="btnPlaceHold" OnClick="btnPlaceHold_Click">Place Hold</asp:LinkButton>
                         <!--<asp:LinkButton runat="server" ID="btnShowUserHolds" OnClick="btnShowUserHolds_Click">Show User Holds</asp:LinkButton>-->
                         <!--<asp:LinkButton runat="server" ID="btnModifyUserHolds" OnClick="btnModifyUserHolds_Click">Modify User Holds</asp:LinkButton>-->
-                        <asp:LinkButton runat="server" ID="btnRemoveUserHolds" OnClick="btnRemoveUserHolds_Click">Remove User Holds</asp:LinkButton>
+                        <asp:LinkButton runat="server" ID="btnRemoveUserHolds" OnClick="btnRemoveUserHolds_Click">Remove Hold</asp:LinkButton>
                         <asp:LinkButton runat="server" ID="btnShowTitleHolds" OnClick="btnShowTitleHolds_Click">Show Item/Title Holds</asp:LinkButton>
                         <!--<asp:LinkButton runat="server" ID="btnRemoveTitleHolds" OnClick="btnRemoveTitleHolds_Click">Remove Item/Title Holds</asp:LinkButton>-->
                         <asp:LinkButton runat="server" ID="btnHoldPullList" OnClick="btnHoldPullList_Click">Hold Pull List</asp:LinkButton>
                         <asp:LinkButton runat="server" ID="btnPullListProcessing" OnClick="btnPullListProcessing_Click">Pull List Processing</asp:LinkButton>
-                        <asp:LinkButton runat="server" ID="btnTransitHoldProcessing" OnClick="btnTransitHoldProcessing_Click">Transit Hold Processing</asp:LinkButton>
+                        <!--<asp:LinkButton runat="server" ID="btnTransitHoldProcessing" OnClick="btnTransitHoldProcessing_Click">Transit Hold Processing</asp:LinkButton>-->
                     </div>
                 </div>
                 <!--End of "Holds" Dropdown Button-->
@@ -225,7 +225,7 @@
 
             <!--"Remove User Hold" Page Content-->
             <div class="removeuserholds_content" runat="server" id="removeuserholds_content" Visible="false">
-                <h1><asp:Label runat="server">Remove User Holds</asp:Label></h1>
+                <h1><asp:Label runat="server">Remove a Hold</asp:Label></h1>
                 <p>Hold's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_remove_user_holds_item_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="remove_user_hold" OnClick="btn_remove_user_hold" Text="Remove User Holds"/>
             </div>
@@ -250,7 +250,7 @@
             <!--"Hold Pull List" Page Content-->
             <div class="holdpulllist_content" runat="server" id="holdpulllist_content" Visible="false">
                 <h1><asp:Label runat="server">Hold Pull List</asp:Label></h1>
-                <asp:Button runat="server" class="buttons" ID="btn_hold_pull_list" Text="View Hold Pull List"/>
+                <asp:PlaceHolder runat="server" ID="placeholder2"></asp:PlaceHolder>
             </div>
             <!--End of "Hold Pull List" Page Content-->
 
@@ -262,13 +262,13 @@
             </div>
             <!--End of "Pull List Processing" Page Content-->
 
-            <!--"Transit Hold Processing" Page Content-->
+            <!--"Transit Hold Processing" Page Content
             <div class="transitholdprocessing_content" runat="server" id="transitholdprocessing_content" Visible="false">
                 <h1><asp:Label runat="server">Transit Holds Processing</asp:Label></h1>
                 <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_transit_hold_processing_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="btn_transit_hold_processing" Text="Process Item"/>
             </div>
-            <!--End of "Transit Hold Processing" Page Content-->
+            End of "Transit Hold Processing" Page Content-->
         </div>
         <div class="footer">
             <p>Ajay Arora</p>

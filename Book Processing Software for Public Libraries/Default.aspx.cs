@@ -35,7 +35,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
 
         if (Session["userID"] != null) //If the user is logged in.
         {
@@ -116,7 +116,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnCheckOut_Click(object sender, EventArgs e)
@@ -139,7 +139,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnRenewUserItems_Click(object sender, EventArgs e)
@@ -162,7 +162,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnBillUser_Click(object sender, EventArgs e)
@@ -185,7 +185,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnShowUser_Click(object sender, EventArgs e)
@@ -208,7 +208,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnRegisterUser_Click(object sender, EventArgs e)
@@ -231,7 +231,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnModifyUser_Click(object sender, EventArgs e)
@@ -254,7 +254,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnRemoveUser_Click(object sender, EventArgs e)
@@ -277,7 +277,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnItems_Click(object sender, EventArgs e)
@@ -300,7 +300,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
 
         //Display Materials Table
         StringBuilder table = new StringBuilder();
@@ -370,7 +370,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnShowUserHolds_Click(object sender, EventArgs e)
@@ -393,7 +393,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnModifyUserHolds_Click(object sender, EventArgs e)
@@ -416,7 +416,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnRemoveUserHolds_Click(object sender, EventArgs e)
@@ -439,7 +439,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnShowTitleHolds_Click(object sender, EventArgs e)
@@ -462,7 +462,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnRemoveTitleHolds_Click(object sender, EventArgs e)
@@ -485,7 +485,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = true;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnHoldPullList_Click(object sender, EventArgs e)
@@ -508,7 +508,54 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = true;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
+
+        //Display Materials Table
+        StringBuilder table = new StringBuilder();
+        SqlConnection itemCon = new SqlConnection();
+        itemCon.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+        itemCon.Open();
+        SqlCommand itemCmd = new SqlCommand();
+        itemCmd.CommandText = "Select * from dbo.Materials WHERE isHeld = 'Yes'";
+        itemCmd.Connection = itemCon;
+        SqlDataReader rd = itemCmd.ExecuteReader();
+        table.Append("<table border='1'>");
+        table.Append("<tr><th>Id</th><th>DeweyCallNo</th><th>Title</th><th>Authors</th><th>ISBN10</th><th>ISBN13</th><th>CatalogingSource</th><th>isHeld</th><th>dueDate</th><th>heldBy</th>");
+        table.Append("</tr>");
+
+        if (rd.HasRows)
+        {
+            while (rd.Read())
+            {
+                table.Append("<tr>");
+                table.Append("<td>" + rd[0] + "</td>");
+                table.Append("<td>" + rd[1] + "</td>");
+                table.Append("<td>" + rd[2] + "</td>");
+                //table.Append("<td>" + rd[3] + "</td>");
+                //table.Append("<td>" + rd[4] + "</td>");
+                //table.Append("<td>" + rd[5] + "</td>");
+                //table.Append("<td>" + rd[6] + "</td>");
+                //table.Append("<td>" + rd[7] + "</td>");
+                //table.Append("<td>" + rd[8] + "</td>");
+                table.Append("<td>" + rd[9] + "</td>");
+                //table.Append("<td>" + rd[10] + "</td>");
+                //table.Append("<td>" + rd[11] + "</td>");
+                //table.Append("<td>" + rd[12] + "</td>");
+                //table.Append("<td>" + rd[13] + "</td>");
+                table.Append("<td>" + rd[14] + "</td>");
+                table.Append("<td>" + rd[15] + "</td>");
+                table.Append("<td>" + rd[16] + "</td>");
+                //table.Append("<td>" + rd[17] + "</td>");
+                table.Append("<td>" + rd[18] + "</td>");
+                table.Append("<td>" + rd[19] + "</td>");
+                table.Append("<td>" + rd[20] + "</td>");
+                //table.Append("<td>" + rd[21] + "</td>");
+                table.Append("</tr>");
+            }
+        }
+        table.Append("</table>");
+        placeholder2.Controls.Add(new Literal { Text = table.ToString() });
+        rd.Close();
     }
 
     protected void btnPullListProcessing_Click(object sender, EventArgs e)
@@ -531,7 +578,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = true;
-        transitholdprocessing_content.Visible = false;
+        //transitholdprocessing_content.Visible = false;
     }
 
     protected void btnTransitHoldProcessing_Click(object sender, EventArgs e)
@@ -554,7 +601,7 @@ public partial class _Default : System.Web.UI.Page
         //removetitleholds_content.Visible = false;
         holdpulllist_content.Visible = false;
         pulllistprocessing_content.Visible = false;
-        transitholdprocessing_content.Visible = true;
+        //transitholdprocessing_content.Visible = true;
     }
 
     /// <summary>

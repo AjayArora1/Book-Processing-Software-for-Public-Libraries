@@ -319,7 +319,7 @@
     border: 2px solid black;
     border-radius: 16px;
     text-align: left;
-    width: 40%;
+    width: 80%;
     padding: 20px;
     position: absolute;
     top: 50%;
@@ -341,7 +341,7 @@
     background-color: white;
 }
 
-.transitholdprocessing_content {
+/*.transitholdprocessing_content {
     border: 2px solid black;
     border-radius: 16px;
     text-align: left;
@@ -352,7 +352,7 @@
     -webkit-transform: translate(7.5%, -50%);
     transform: translate(7.5%, -50%);
     background-color: white;
-}
+}*/
 
 .footer {
     overflow: hidden;
