@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Text;
+using System.IO;
 
 public partial class _Default : System.Web.UI.Page
 {
@@ -516,7 +517,7 @@ public partial class _Default : System.Web.UI.Page
         itemCon.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
         itemCon.Open();
         SqlCommand itemCmd = new SqlCommand();
-        itemCmd.CommandText = "Select * from dbo.Materials WHERE isHeld = 'Yes'";
+        itemCmd.CommandText = "Select * from dbo.Materials WHERE isHeld = 'Yes' AND isProcessed != 'Yes'";
         itemCmd.Connection = itemCon;
         SqlDataReader rd = itemCmd.ExecuteReader();
         table.Append("<table border='1'>");
@@ -958,7 +959,7 @@ public partial class _Default : System.Web.UI.Page
         using (SqlConnection sqlcon = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True;"))
         {
             sqlcon.Open();
-            string Query = "SELECT * FROM dbo.Materials WHERE Id = @Id AND isHeld = 'Yes'";
+            string Query = "SELECT * FROM dbo.Materials WHERE Id = @Id AND isHeld = 'Yes' AND isProcessed != 'Yes'";
             SqlCommand sqlCmd = new SqlCommand(Query, sqlcon);
             sqlCmd.Parameters.AddWithValue("Id", show_item_id);
             //Reads each cell of a row in the materials database, so we can access all their user information from the database.
@@ -976,4 +977,36 @@ public partial class _Default : System.Web.UI.Page
             sqlcon.Close();
         }
     }
+
+    //When clicking the button on pull list processing after all data is entered.
+    protected void btn_pull_list_processing(object sender, EventArgs e)
+    {
+        string pull_list_item = txt_pull_list_processing_ID.Text;
+        using (SqlConnection sqlcon = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True;"))
+        {
+            sqlcon.Open();
+            string Query = "SELECT * FROM dbo.Materials WHERE Id = @Id AND isProcessed != 'Yes' " + "UPDATE dbo.Materials SET isProcessed = 'Yes' WHERE Id = @Id";
+            SqlCommand sqlCmd = new SqlCommand(Query, sqlcon);
+            sqlCmd.Parameters.AddWithValue("Id", pull_list_item);
+            //Reads each cell of a row in the materials database, so we can access all their user information from the database.
+            using (SqlDataReader y = sqlCmd.ExecuteReader())
+            {
+                while (y.Read())
+                {
+                    //write info to a text file and print it. Then change 'isProcessed' to 'Yes'
+                    string receiptText = "Item ID: " + y["Id"].ToString() + "\n" + "Held By: " + y["heldBy"].ToString() + "\n" + "Pick Up By: " + DateTime.Now.AddDays(7).ToString("MM/dd/yyyy"); //Environment.NewLine;
+                    string path = HttpContext.Current.Server.MapPath(@"~/textFiles/receipt.txt");
+                    File.CreateText(path).Close();
+                    File.WriteAllText(path, receiptText);
+                    //TO DO: Print the text file automatically (or open the print preview first, whichever works better).
+                }
+                if (!y.HasRows)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert20", "alert('This item has either already been processed or has no holds on it.');", true);
+                }
+            }
+            sqlcon.Close();
+        }
+    }
+
 }

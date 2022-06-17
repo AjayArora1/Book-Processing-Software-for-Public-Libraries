@@ -258,7 +258,7 @@
             <div class="pulllistprocessing_content" runat="server" id="pulllistprocessing_content" Visible="false">
                 <h1><asp:Label runat="server">Pull List Processing</asp:Label></h1>
                 <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_pull_list_processing_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <asp:Button runat="server" class="buttons" ID="btn_pull_list_processing" Text="Process Item"/>
+                <asp:Button runat="server" class="buttons" ID="pull_list_processing" OnClick="btn_pull_list_processing" Text="Process Item"/>
             </div>
             <!--End of "Pull List Processing" Page Content-->
 
