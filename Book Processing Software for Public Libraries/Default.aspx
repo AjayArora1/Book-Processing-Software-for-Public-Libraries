@@ -235,7 +235,7 @@
             <div class="showtitleholds_content" runat="server" id="showtitleholds_content" Visible="false">
                 <h1><asp:Label runat="server">Show Title Holds</asp:Label></h1>
                 <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_show_title_holds_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <asp:Button runat="server" class="buttons" ID="btn_show_title_holds" Text="View Title Holds"/>
+                <asp:Button runat="server" class="buttons" ID="show_title_holds" OnClick="btn_show_title_holds" Text="View Title Holds"/>
             </div>
             <!--End of "Show Title Hold" Page Content-->
 

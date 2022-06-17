@@ -806,7 +806,7 @@ public partial class _Default : System.Web.UI.Page
     //When clicking the button on the register user page after all data is entered.
     protected void btn_register_user(object sender, EventArgs e)
     {
-        
+
         string register_user_id = txt_register_user_library_card_number.Text;
         string register_user_pin = txt_register_user_library_card_PIN.Text;
         string register_user_username = txt_register_user_username.Text;
@@ -815,7 +815,8 @@ public partial class _Default : System.Web.UI.Page
         if (checkbox_register_user_isAdmin.Checked == true)
         {
             register_user_isAdmin = "Yes";
-        } else
+        }
+        else
         {
             register_user_isAdmin = "No";
         }
@@ -828,14 +829,16 @@ public partial class _Default : System.Web.UI.Page
         else if (!register_user_id.Contains("29065"))
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert13", "alert('User ID must start with 29065');", true);
-        } else { 
+        }
+        else
+        {
             string sqlstring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True";
             SqlConnection connection = new SqlConnection(sqlstring);
             connection.Open();
 
             string insertquery = "insert into dbo.Users(Username, Password, isAdmin, userID, userPIN, fees) values(@Username, @Password, @isAdmin, @userID, @userPIN, @fees)";
             SqlCommand cmd = new SqlCommand(insertquery, connection);
-            
+
             cmd.Parameters.AddWithValue("userID", register_user_id);
             cmd.Parameters.AddWithValue("userPIN", register_user_pin);
             cmd.Parameters.AddWithValue("Username", register_user_username);
@@ -945,6 +948,32 @@ public partial class _Default : System.Web.UI.Page
         if (result < 1)
         {
             ClientScript.RegisterStartupScript(this.GetType(), "myalert17", "alert('Error: Either this item does not exist or this item already has no holds on it.');", true);
+        }
+    }
+
+    //When clicking the button on show title hold after all data is entered.
+    protected void btn_show_title_holds(object sender, EventArgs e)
+    {
+        string show_item_id = txt_show_title_holds_ID.Text;
+        using (SqlConnection sqlcon = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Ajay\Desktop\Visual Studio Projects\Book Processing Software for Public Libraries\Book Processing Software for Public Libraries\App_Data\LibraryDatabase.mdf; Integrated Security = True;"))
+        {
+            sqlcon.Open();
+            string Query = "SELECT * FROM dbo.Materials WHERE Id = @Id AND isHeld = 'Yes'";
+            SqlCommand sqlCmd = new SqlCommand(Query, sqlcon);
+            sqlCmd.Parameters.AddWithValue("Id", show_item_id);
+            //Reads each cell of a row in the materials database, so we can access all their user information from the database.
+            using (SqlDataReader y = sqlCmd.ExecuteReader())
+            {
+                if (y.Read())
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert18", "alert('This item is held by library user " + y["heldBy"].ToString() + ".');", true);
+                }
+                if (!y.HasRows)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert19", "alert('This item either doesn't exist or it has no holds on it.');", true);
+                }
+            }
+            sqlcon.Close();
         }
     }
 }
