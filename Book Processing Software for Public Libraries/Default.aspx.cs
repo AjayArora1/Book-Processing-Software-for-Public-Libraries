@@ -996,7 +996,7 @@ public partial class _Default : System.Web.UI.Page
                 while (y.Read())
                 {
                     //write info to a text file and print it. Then change 'isProcessed' to 'Yes'
-                    string receiptText = "Item ID: " + y["Id"].ToString() + "\n" + "Held By: " + y["heldBy"].ToString() + "\n" + "Pick Up By: " + DateTime.Now.AddDays(7).ToString("MM/dd/yyyy") + "\n" + "//end of file";
+                    string receiptText = "Item ID: \n" + y["Id"].ToString() + "\n\n" + "Held By: \n" + y["heldBy"].ToString() + "\n\n" + "Pick Up By: \n" + DateTime.Now.AddDays(7).ToString("MM/dd/yyyy");
                     string path = HttpContext.Current.Server.MapPath(@"~/textFiles/receipt.txt");
                     File.CreateText(path).Close();
                     File.WriteAllText(path, receiptText);
@@ -1024,7 +1024,7 @@ public partial class _Default : System.Web.UI.Page
         Graphics g = ev.Graphics;
 
         //Create a font Arial with size 16  
-        Font font = new Font("Arial", 16);
+        Font font = new Font("Arial Bold", 16);
 
         //Create a solid brush with black color  
         SolidBrush brush = new SolidBrush(Color.Black);
@@ -1033,7 +1033,7 @@ public partial class _Default : System.Web.UI.Page
         
         g.DrawString(reader.ReadToEnd(),
         font, brush,
-        new Rectangle(200, 200, 200, 200));
+        new Rectangle(20, 20, 300, 300));
         
 
         if (reader != null)

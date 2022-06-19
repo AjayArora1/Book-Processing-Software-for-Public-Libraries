@@ -89,29 +89,29 @@
                 <div class="checkin_content_1" style="width:50%; float:left;">
                     <h1><asp:Label runat="server">Check-In</asp:Label></h1>
                     <h2>Required Fields:</h2>
-                    <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                    <p>Item Title: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_title"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                    <p>Item Author: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_author"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                    <p>Dewey Call Number: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_dewey_call_no"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                    <p>ISBN10: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_isbn10"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                    <p>ISBN13: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkin_isbn13"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                    <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="39065XXXXXXXXX" ID="txt_checkin_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                    <p>Item Title: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="Goodnight Moon" ID="txt_checkin_title"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                    <p>Item Author: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="Dr. Seuss" ID="txt_checkin_author"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                    <p>Dewey Call Number: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="BOARD BOOK CAR" ID="txt_checkin_dewey_call_no"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                    <p>ISBN10: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="1234567890" ID="txt_checkin_isbn10"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                    <p>ISBN13: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="1234567890123" ID="txt_checkin_isbn13"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                     <br /><br /><br />
                     <asp:Button runat="server" class="buttons" ID="checkin_item" OnClick="btn_checkin_item" Text="Check In"/>
                 </div>
                 <div class="checkin_content_2" style="width:50%; float:right;">
                     <h2>Optional Fields:</h2>
-                    <p>Publication Info: <asp:TextBox runat="server" ID="txt_checkin_publication_info"></asp:TextBox></p>
-                    <p>Physical Description: <asp:TextBox runat="server" ID="txt_checkin_physical_description"></asp:TextBox></p>
-                    <p>Action Note: <asp:TextBox runat="server" ID="txt_checkin_action_note"></asp:TextBox></p>
-                    <p>Subject Term: <asp:TextBox runat="server" ID="txt_checkin_subject_term"></asp:TextBox></p>
-                    <p>Leader: <asp:TextBox runat="server" ID="txt_checkin_leader"></asp:TextBox></p>
-                    <p>Control Number: <asp:TextBox runat="server" ID="txt_checkin_control_number"></asp:TextBox></p>
-                    <p>Fixed Field Data: <asp:TextBox runat="server" ID="txt_checkin_fixed_field_data"></asp:TextBox></p>
-                    <p>Natl Bibliography Info: <asp:TextBox runat="server" ID="txt_checkin_natl_bibliography_info"></asp:TextBox></p>
-                    <p>Cataloging Source: <asp:TextBox runat="server" ID="txt_checkin_cataloging_source"></asp:TextBox></p>
-                    <p>LLC Call Number: <asp:TextBox runat="server" ID="txt_checkin_llc_call_number"></asp:TextBox></p>
-                    <p>General Note: <asp:TextBox runat="server" ID="txt_checkin_general_note"></asp:TextBox></p>
-                    <p>Bibliography Note: <asp:TextBox runat="server" ID="txt_checkin_bibliography_note"></asp:TextBox></p>
+                    <p>Publication Info: <asp:TextBox runat="server" placeholder="(C) 2022" ID="txt_checkin_publication_info"></asp:TextBox></p>
+                    <p>Physical Description: <asp:TextBox runat="server" placeholder="Good Condition" ID="txt_checkin_physical_description"></asp:TextBox></p>
+                    <p>Action Note: <asp:TextBox runat="server" placeholder="Replace By Next Week" ID="txt_checkin_action_note"></asp:TextBox></p>
+                    <p>Subject Term: <asp:TextBox runat="server" placeholder="Caterpillars" ID="txt_checkin_subject_term"></asp:TextBox></p>
+                    <p>Leader: <asp:TextBox runat="server" placeholder="Prefix - The" ID="txt_checkin_leader"></asp:TextBox></p>
+                    <p>Control Number: <asp:TextBox runat="server" placeholder="1" ID="txt_checkin_control_number"></asp:TextBox></p>
+                    <p>Fixed Field Data: <asp:TextBox runat="server" placeholder="N/A" ID="txt_checkin_fixed_field_data"></asp:TextBox></p>
+                    <p>Natl Bibliography Info: <asp:TextBox runat="server" placeholder="APA Citations" ID="txt_checkin_natl_bibliography_info"></asp:TextBox></p>
+                    <p>Cataloging Source: <asp:TextBox runat="server" placeholder="Bookstore" ID="txt_checkin_cataloging_source"></asp:TextBox></p>
+                    <p>LLC Call Number: <asp:TextBox runat="server" placeholder="1" ID="txt_checkin_llc_call_number"></asp:TextBox></p>
+                    <p>General Note: <asp:TextBox runat="server" placeholder="Only Copy" ID="txt_checkin_general_note"></asp:TextBox></p>
+                    <p>Bibliography Note: <asp:TextBox runat="server" placeholder="APA Citations" ID="txt_checkin_bibliography_note"></asp:TextBox></p>
                 </div>
             </div>
             <!--End of "CheckIn" Page Content-->
@@ -119,7 +119,7 @@
             <!--"CheckOut" Page Content-->
             <div class="checkout_content" runat="server" id="checkout_content" Visible="false">
                 <h1><asp:Label runat="server">Check-Out</asp:Label></h1>
-                <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_checkout_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="39065XXXXXXXXX" ID="txt_checkout_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="checkout_item" OnClick="btn_checkout_item" Text="Check Out"/>
             </div>
             <!--End of "CheckOut" Page Content-->
@@ -127,8 +127,8 @@
             <!--"RenewUserItems" Page Content-->
             <div class="renewuseritems_content" runat="server" id="renewuseritems_content" Visible="false">
                 <h1><asp:Label runat="server">Renew User Items</asp:Label></h1>
-                <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_renew_user_items_ID" MaxLength="14" Placeholder="39065XXXXXXXXX"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>New Due Date: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_renew_user_items_new_due_date" MaxLength="8" Placeholder="MMDDYYYY"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Item ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="39065XXXXXXXXX" ID="txt_renew_user_items_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>New Due Date: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="MMDDYYYY" ID="txt_renew_user_items_new_due_date" MaxLength="8"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="renew_user_item" OnClick="btn_renew_user_item" Text="Renew Item"/>
             </div>
             <!--End of "RenewUserItems" Page Content-->
@@ -136,8 +136,8 @@
             <!--"BillUser" Page Content-->
             <div class="billuser_content" runat="server" id="billuser_content" Visible="false">
                 <h1><asp:Label runat="server">Bill a User</asp:Label></h1>
-                <p>User to bill's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_bill_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>Amount to bill user: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_bill_user_amount" MaxLength="10"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>User to bill's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="29065XXXXXXXXX" ID="txt_bill_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Amount to bill user: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="$9.99" ID="txt_bill_user_amount" MaxLength="10"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="bill_user" OnClick="btn_bill_user" Text="Bill User"/>
             </div>
             <!--End of "BillUser" Page Content-->
@@ -145,7 +145,7 @@
             <!--"ShowUser" Page Content-->
             <div class="showuser_content" runat="server" id="showuser_content" Visible="false">
                 <h1><asp:Label runat="server">Show User</asp:Label></h1>
-                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_show_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="29065XXXXXXXXX" ID="txt_show_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="show_user" OnClick="btn_show_user" Text="Show User Info"/><br />
                 <asp:Label runat="server" ID="showUserID"></asp:Label><br />
                 <asp:Label runat="server" ID="showID"></asp:Label><br />
@@ -160,10 +160,10 @@
             <!--"RegisterUser" Page Content-->
             <div class="registeruser_content" runat="server" id="registeruser_content" Visible="false">
                 <h1><asp:Label runat="server">Register User</asp:Label></h1>
-                <p>Library Card Number: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_register_user_library_card_number" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>Library Card PIN: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_register_user_library_card_PIN" MaxLength="7"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>Username: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_register_user_username"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>Password: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_register_user_password"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Library Card Number: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="29065XXXXXXXXX" ID="txt_register_user_library_card_number" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Library Card PIN: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="1234567" ID="txt_register_user_library_card_PIN" MaxLength="7"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Username: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="jSmith" ID="txt_register_user_username"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Password: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="apples123" ID="txt_register_user_password"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:CheckBox runat="server" Text="Is this user going to be an administrator?" ID="checkbox_register_user_isAdmin"/><strong style="color:red;">(Required)</strong>
                 <asp:Button runat="server" class="buttons" ID="register_user" OnClick="btn_register_user" Text="Show User Info"/><br />
             </div>
@@ -172,12 +172,12 @@
             <!--"ModifyUser" Page Content-->
             <div class="modifyuser_content" runat="server" id="modifyuser_content" Visible="false">
                 <h1><asp:Label runat="server">Modify User</asp:Label></h1>
-                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>User's New PIN: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_new_PIN" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>User's New Username: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_new_Username" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>User's New Password: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_new_Password" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>Is the user now an admin?: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_new_isAdmin" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
-                <p>Total User Fees: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_modify_user_new_fees" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="29065XXXXXXXXX" ID="txt_modify_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>User's New PIN: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="1234567" ID="txt_modify_user_new_PIN" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>User's New Username: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="jSmith" ID="txt_modify_user_new_Username" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>User's New Password: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="apples123" ID="txt_modify_user_new_Password" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Is the user now an admin?: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="Yes/No" ID="txt_modify_user_new_isAdmin" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Total User Fees: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="$0.00" ID="txt_modify_user_new_fees" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="modify_user" OnClick="btn_modify_user" Text="Modify User Account"/>
             </div>
             <!--End of "ModifyUser" Page Content-->
@@ -185,7 +185,7 @@
             <!--"RemoveUser" Page Content-->
             <div class="removeuser_content" runat="server" id="removeuser_content" Visible="false">
                 <h1><asp:Label runat="server">Remove User</asp:Label></h1>
-                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_remove_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>User's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="29065XXXXXXXXX" ID="txt_remove_user_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="remove_user" OnClick="btn_remove_user" Text="Remove User Account"/>
             </div>
             <!--End of "RemoveUser" Page Content-->
@@ -201,7 +201,7 @@
             <!--"Place Hold" Page Content-->
             <div class="placehold_content" runat="server" id="placehold_content" Visible="false">
                 <h1><asp:Label runat="server">Place a Hold</asp:Label></h1>
-                <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_place_hold_item_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="39065XXXXXXXXX" ID="txt_place_hold_item_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="place_hold" OnClick="btn_place_hold" Text="Place Hold"/>
                 
             </div>
@@ -226,7 +226,7 @@
             <!--"Remove User Hold" Page Content-->
             <div class="removeuserholds_content" runat="server" id="removeuserholds_content" Visible="false">
                 <h1><asp:Label runat="server">Remove a Hold</asp:Label></h1>
-                <p>Hold's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_remove_user_holds_item_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Hold's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="39065XXXXXXXXX" ID="txt_remove_user_holds_item_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="remove_user_hold" OnClick="btn_remove_user_hold" Text="Remove User Holds"/>
             </div>
             <!--End of "Remove User Hold" Page Content-->
@@ -234,7 +234,7 @@
             <!--"Show Title Hold" Page Content-->
             <div class="showtitleholds_content" runat="server" id="showtitleholds_content" Visible="false">
                 <h1><asp:Label runat="server">Show Title Holds</asp:Label></h1>
-                <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_show_title_holds_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="39065XXXXXXXXX" ID="txt_show_title_holds_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="show_title_holds" OnClick="btn_show_title_holds" Text="View Title Holds"/>
             </div>
             <!--End of "Show Title Hold" Page Content-->
@@ -257,7 +257,7 @@
             <!--"Pull List Processing" Page Content-->
             <div class="pulllistprocessing_content" runat="server" id="pulllistprocessing_content" Visible="false">
                 <h1><asp:Label runat="server">Pull List Processing</asp:Label></h1>
-                <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" ID="txt_pull_list_processing_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
+                <p>Item's ID: <strong style="color:red;">*</strong><asp:TextBox runat="server" placeholder="39065XXXXXXXXX" ID="txt_pull_list_processing_ID" MaxLength="14"></asp:TextBox><strong style="color:red;">(Required)</strong></p>
                 <asp:Button runat="server" class="buttons" ID="pull_list_processing" OnClick="btn_pull_list_processing" Text="Process Item"/>
             </div>
             <!--End of "Pull List Processing" Page Content-->
@@ -271,7 +271,8 @@
             End of "Transit Hold Processing" Page Content-->
         </div>
         <div class="footer">
-            <p>Ajay Arora</p>
+            <p style="font-size: 0.875em;">Arora Book Processor Software - Copyright © 2022 - Ajay Arora, T00646554. All Rights Reserved.</p>
+            <p style="font-size: 0.75em;">For help, refer to the user manual or appropriate documentation.</p>
         </div>
     </form>
 </body>

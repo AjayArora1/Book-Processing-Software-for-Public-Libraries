@@ -63,13 +63,13 @@
                 <div class="loginFormContent">
                     <h1>Login</h1>
                     <strong>User ID: <strong style="color:red;">*</strong></strong>
-                    <asp:TextBox runat="server" ID="usernameField" placeholder="(your library card number)" MaxLength="14" style="border: 2px solid grey; border-radius: 4px;"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="usernameField" placeholder="29065XXXXXXXXX" MaxLength="14" style="border: 2px solid grey; border-radius: 4px;"></asp:TextBox>
                     <strong style="color: red;">(Required)</strong>
                     <br />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator" runat="server" ControlToValidate="usernameField" ErrorMessage="Please Enter Your Username" ForeColor="Red"></asp:RequiredFieldValidator>  
                     <br />
                     <strong>PIN No: <strong style="color:red;">*</strong></strong>
-                    <asp:TextBox runat="server" ID="passwordField" placeholder="(last 7 digits of your phone #)" MaxLength="7" style="border: 2px solid grey; border-radius: 4px;" TextMode="Password"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="passwordField" placeholder="XXXXXXX" MaxLength="7" style="border: 2px solid grey; border-radius: 4px;" TextMode="Password"></asp:TextBox>
                     <strong style="color: red;">(Required)</strong>
                     <br />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="passwordField" ErrorMessage="Please Enter Your Password" ForeColor="Red"></asp:RequiredFieldValidator>  
@@ -82,7 +82,8 @@
                 </div>
             </div>
             <div class="footer">
-                <p>Ajay Arora</p>
+                <p style="font-size: 0.875em;">Arora Book Processor Software - Copyright © 2022 - Ajay Arora, T00646554. All Rights Reserved.</p>
+                <p style="font-size: 0.75em;">For help, refer to the user manual or appropriate documentation.</p>
             </div>
         </div>
     </form>
