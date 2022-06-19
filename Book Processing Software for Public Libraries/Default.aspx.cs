@@ -9,6 +9,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Text;
 using System.IO;
+using System.Drawing.Printing;
+using System.Drawing;
 
 public partial class _Default : System.Web.UI.Page
 {
@@ -994,11 +996,16 @@ public partial class _Default : System.Web.UI.Page
                 while (y.Read())
                 {
                     //write info to a text file and print it. Then change 'isProcessed' to 'Yes'
-                    string receiptText = "Item ID: " + y["Id"].ToString() + "\n" + "Held By: " + y["heldBy"].ToString() + "\n" + "Pick Up By: " + DateTime.Now.AddDays(7).ToString("MM/dd/yyyy"); //Environment.NewLine;
+                    string receiptText = "Item ID: " + y["Id"].ToString() + "\n" + "Held By: " + y["heldBy"].ToString() + "\n" + "Pick Up By: " + DateTime.Now.AddDays(7).ToString("MM/dd/yyyy") + "\n" + "//end of file";
                     string path = HttpContext.Current.Server.MapPath(@"~/textFiles/receipt.txt");
                     File.CreateText(path).Close();
                     File.WriteAllText(path, receiptText);
-                    //TO DO: Print the text file automatically (or open the print preview first, whichever works better).
+                    //Print the text file automatically
+                    
+                    PrintDocument pd = new PrintDocument();
+                    pd.PrintPage += new PrintPageEventHandler(pd_PrintPage);
+                    pd.Print();
+                    
                 }
                 if (!y.HasRows)
                 {
@@ -1008,5 +1015,30 @@ public partial class _Default : System.Web.UI.Page
             sqlcon.Close();
         }
     }
+    public void pd_PrintPage(object sender, PrintPageEventArgs ev)
+    {
+        string path = HttpContext.Current.Server.MapPath(@"~/textFiles/receipt.txt");
+        StreamReader reader = new StreamReader(path);
 
+        //Get the Graphics object  
+        Graphics g = ev.Graphics;
+
+        //Create a font Arial with size 16  
+        Font font = new Font("Arial", 16);
+
+        //Create a solid brush with black color  
+        SolidBrush brush = new SolidBrush(Color.Black);
+
+        //Read exactly 3 lines and write it to the file
+        
+        g.DrawString(reader.ReadToEnd(),
+        font, brush,
+        new Rectangle(200, 200, 200, 200));
+        
+
+        if (reader != null)
+        {
+            reader.Close();
+        }
+    }
 }
